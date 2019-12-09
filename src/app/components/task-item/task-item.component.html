@@ -1,0 +1,14 @@
+<div class="task-item">
+  <app-checkbox [label]="task.text | tagHighlight" [checked]="task.done" (toggleCheckbox)="toggle()"></app-checkbox>
+  <button class="delete" (click)="delete()">
+    <div class="bin-icon">
+      <div class="lid"></div>
+      <div class="box">
+        <div class="box-inner">
+          <div class="bin-lines"></div>
+        </div>
+      </div>
+    </div>
+  </button>
+  <span class="time">{{ task.dueDate | timeTo }}</span>
+</div>

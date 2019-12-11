@@ -10,24 +10,18 @@ $bin-width: 36px;
   height: #{$bin-height - 28};
   border-radius: 4px;
 }
-
 .task-item {
   display: flex;
   padding: 1rem;
   justify-content: space-between;
   align-items: center;
   min-height: #{$bin-height * 2};
+  position: relative;
+  overflow: hidden;
   &:hover {
-    button.delete {
-      display: inherit;
-      animation: appear 1s normal forwards;
+    .del-con {
+      margin-right: 0;
     }
-    .time {
-      display: none;
-    }
-  }
-  .time {
-    animation: appear 1s normal forwards;
   }
 }
 .bin-icon {
@@ -102,37 +96,51 @@ $bin-width: 36px;
     transition: 0.2s ease background-color;
   }
 }
-button.delete {
-  display: none;
-  position: relative;
-  width: $bin-width;
-  height: $bin-height;
-  background: transparent;
-  outline: none;
-  opacity: 0;
-  &:active > .bin-icon {
-    .lid {
-      background-color: $white;
-      animation: lift-up 0.8s ease 0.1s, shake_u 0.8s ease 0.1s, shake_l 0.2s ease 0.8s;
-      &:before {
+.del-con {
+  display: flex;
+  position: absolute;
+  right: 0px;
+  background: rgba(244, 67, 54, 0.5);
+  height: 100%;
+  padding-right: 10px;
+  align-items: center;
+  width: 60px;
+  justify-content: center;
+  margin-right: -200px;
+  transition: margin-right 0.5s ease-in-out;
+  button.delete {
+    position: relative;
+    width: $bin-width;
+    height: $bin-height;
+    background: transparent;
+    outline: none;
+    &:active > .bin-icon {
+      .lid {
+        background-color: $white;
+        animation: lift-up 0.8s ease 0.1s, shake_u 0.8s ease 0.1s, shake_l 0.2s ease 0.8s;
+        &:before {
+          background-color: $white;
+        }
+      }
+      .box {
+        background-color: $white;
+        animation: shake 0.2s ease 0.1s;
+      }
+      .box-inner {
         background-color: $white;
       }
-    }
-    .box {
-      background-color: $white;
-      animation: shake 0.2s ease 0.1s;
-    }
-    .box-inner {
-      background-color: $white;
-    }
-    .bin-lines {
-      background-color: $color_cerulean_approx;
-      &:before {
+      .bin-lines {
         background-color: $color_cerulean_approx;
-      }
-      &:after {
-        background-color: $color_cerulean_approx;
+        &:before {
+          background-color: $color_cerulean_approx;
+        }
+        &:after {
+          background-color: $color_cerulean_approx;
+        }
       }
     }
   }
+}
+app-checkbox {
+  width: 100%;
 }

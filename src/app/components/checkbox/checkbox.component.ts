@@ -8,7 +8,8 @@ import { Component, OnInit, ChangeDetectionStrategy, Input, Output, EventEmitter
 })
 export class CheckboxComponent implements OnInit {
   @Input() checked = false
-  @Input() label: string
+  @Input() text: string
+  @Input() dueDate: number
   @Output() toggleCheckbox = new EventEmitter<boolean>()
   constructor() {}
 

@@ -6,5 +6,8 @@
       ></path>
     </svg>
   </span>
-  <label [class.checked]="checked" [innerHTML]="label"></label>
+  <div class="label">
+    <span class="text" [class.checked]="checked" [innerHTML]="text"></span>
+    <span class="time">{{ dueDate | timeTo }}</span>
+  </div>
 </div>

@@ -38,7 +38,7 @@ export class BadgeListComponent implements OnInit, OnDestroy {
       tags.forEach(tag => {
         if (this.completedTags.has(tag)) {
           this.completedTags.set(tag, this.completedTags.get(tag) + 1)
-        } else {
+        } else if (tag) {
           this.completedTags.set(tag, 1)
         }
       })
@@ -47,7 +47,7 @@ export class BadgeListComponent implements OnInit, OnDestroy {
       tags.forEach(tag => {
         if (this.activeTags.has(tag)) {
           this.activeTags.set(tag, this.activeTags.get(tag) + 1)
-        } else {
+        } else if (tag) {
           this.activeTags.set(tag, 1)
         }
       })

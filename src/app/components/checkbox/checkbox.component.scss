@@ -1,6 +1,5 @@
 .checkbox-container {
   display: flex;
-  justify-content: center;
   align-items: center;
 }
 svg {
@@ -27,10 +26,28 @@ svg {
     stroke-dashoffset: 0;
   }
 }
-label {
+@media (max-width: 36em) {
+  .label {
+    flex-direction: column;
+  }
+}
+.label {
+  display: flex;
+  justify-content: space-between;
+  flex: 1;
+  .time {
+    margin-left: 0.5rem;
+    padding: 5px;
+    vertical-align: top;
+    animation: appear 1s normal forwards;
+    font-size: 1rem;
+    font-style: italic;
+  }
+}
+.text {
   flex: 1;
   position: relative;
-  font-size: 2rem;
+  font-size: 1.5rem;
   vertical-align: top;
   cursor: pointer;
   margin-left: 0.5rem;

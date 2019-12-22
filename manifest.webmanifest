@@ -4,8 +4,8 @@
   "theme_color": "#fc6c48",
   "background_color": "#ef5081",
   "display": "standalone",
-  "scope": "/",
-  "start_url": "/",
+  "scope": "/tasks/",
+  "start_url": "/tasks/",
   "icons": [
     {
       "src": "assets/icons/icon-72x72.png",

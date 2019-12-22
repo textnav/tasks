@@ -1,6 +1,6 @@
 {
   "configVersion": 1,
-  "timestamp": 1577019438128,
+  "timestamp": 1577021067664,
   "index": "/tasks/index.html",
   "assetGroups": [
     {
@@ -10,14 +10,14 @@
       "urls": [
         "/tasks/favicon.ico",
         "/tasks/index.html",
-        "/tasks/main-es2015.338613b7aa756f2ae486.js",
-        "/tasks/main-es5.338613b7aa756f2ae486.js",
+        "/tasks/main-es2015.7869739150a3c9e894bc.js",
+        "/tasks/main-es5.7869739150a3c9e894bc.js",
         "/tasks/manifest.webmanifest",
         "/tasks/polyfills-es2015.2987770fde9daa1d8a2e.js",
         "/tasks/polyfills-es5.6696c533341b95a3d617.js",
         "/tasks/runtime-es2015.edb2fcf2778e7bf1d426.js",
         "/tasks/runtime-es5.edb2fcf2778e7bf1d426.js",
-        "/tasks/styles.4d571b6ba96fbcbfce31.css"
+        "/tasks/styles.5d9f5de89c7b96244c55.css"
       ],
       "patterns": []
     },
@@ -67,15 +67,15 @@
     "/tasks/assets/icons/mstile-150x150.png": "ecc6dcf362728ec80eb0d2b79924d1d735a2c5ee",
     "/tasks/assets/icons/safari-pinned-tab.svg": "96d46d963f7004b851e1e6914e1129f1602c6785",
     "/tasks/favicon.ico": "f91507db77aea23b2e10b625d2b5fe955159ece9",
-    "/tasks/index.html": "c62f4d70c1b004b5ce17ecee3f7e767f088697cd",
-    "/tasks/main-es2015.338613b7aa756f2ae486.js": "8c3153f91036240e34760ad06caee4e6f538cf1d",
-    "/tasks/main-es5.338613b7aa756f2ae486.js": "dd395e0f23b1ef7e3fe0c7c8c05ee4b9f407ccbf",
+    "/tasks/index.html": "0e21a5f48db5a5b3d7c12fdba9f9c0f678dedc66",
+    "/tasks/main-es2015.7869739150a3c9e894bc.js": "5d0ad219654c268aeb89a9911ce473d9ba3c5f6d",
+    "/tasks/main-es5.7869739150a3c9e894bc.js": "dc330c16ca40ebe7a9a4d84cec17c08533b7ed3c",
     "/tasks/manifest.webmanifest": "f63db12a329faa9607c5ed00f39ae5e2f8e00b5f",
     "/tasks/polyfills-es2015.2987770fde9daa1d8a2e.js": "cf5cbfa9134716054fb479ab21362146cdf1f2ff",
     "/tasks/polyfills-es5.6696c533341b95a3d617.js": "9ceb13edd4b10268f661814868dadb2b284f9745",
     "/tasks/runtime-es2015.edb2fcf2778e7bf1d426.js": "a9aafcf49f49145093fc831efd9b8e2f6c71bb9c",
     "/tasks/runtime-es5.edb2fcf2778e7bf1d426.js": "a9aafcf49f49145093fc831efd9b8e2f6c71bb9c",
-    "/tasks/styles.4d571b6ba96fbcbfce31.css": "7b05697c708c8144b27be4be94d0162f0c6e9430"
+    "/tasks/styles.5d9f5de89c7b96244c55.css": "ecd65505bdbfd952dff21c292abc509137677cc4"
   },
   "navigationUrls": [
     {

@@ -34,7 +34,6 @@ svg {
 .label {
   display: flex;
   justify-content: space-between;
-  flex: 1;
   .time {
     margin-left: 0.5rem;
     padding: 5px;
@@ -76,8 +75,11 @@ svg {
   transition: opacity 0.3s;
   opacity: 0.8;
   border-radius: 50%;
-  width: 2.5rem;
-  height: 2.5rem;
+  width: 42px;
+  min-width: 42px;
+  height: 42px;
+  min-height: 42px;
+  margin-right: 0.5rem;
   display: inline-block;
 }
 @keyframes strike {

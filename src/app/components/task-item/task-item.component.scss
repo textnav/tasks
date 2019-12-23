@@ -2,17 +2,17 @@
 $white: #fff;
 $color_red_orange_approx: #f44336;
 $color_cerulean_approx: #03a9f4;
-$bin-height: 48px;
+$bin-height: 24px;
 $bin-width: 36px;
 
 %extend_1 {
-  width: 3px;
-  height: #{$bin-height - 28};
+  width: 2px;
+  height: #{$bin-height - 8};
   border-radius: 4px;
 }
 .task-item {
   display: flex;
-  padding: 1rem;
+  padding: 0 1rem;
   justify-content: space-between;
   align-items: center;
   min-height: #{$bin-height * 2};
@@ -27,17 +27,17 @@ $bin-width: 36px;
 .bin-icon {
   position: absolute;
   top: 50%;
+  left: 50%;
   width: $bin-width;
   height: $bin-height;
-  margin: #{$bin-height / -2} auto 0 auto;
+  margin: #{$bin-height * -0.6} auto 0 #{$bin-width / -2};
   border-radius: 50%;
   z-index: 2;
 }
 .lid {
   position: relative;
-  width: #{$bin-width + 8};
+  width: $bin-width;
   height: 4px;
-  left: -4px;
   border-radius: 4px;
   background-color: $color_red_orange_approx;
   transition: 0.2s ease background-color;
@@ -57,24 +57,24 @@ $bin-width: 36px;
 }
 .box {
   position: relative;
-  height: #{$bin-height - 6};
-  margin-top: 2px;
+  height: #{$bin-height + 6};
+  margin: 2px 2px 0 2px;
   border-radius: 0 0 8px 8px;
   background-color: $color_red_orange_approx;
   transition: 0.2s ease background-color;
 }
 .box-inner {
   position: relative;
-  top: 4px;
-  width: #{$bin-width - 8};
-  height: #{$bin-height - 14};
+  top: 3px;
+  width: $bin-height;
+  height: $bin-height;
   margin: 0 auto;
   background-color: $white;
   border-radius: 0 0 5px 5px;
 }
 .bin-lines {
   position: relative;
-  top: 7px;
+  top: 4px;
   margin: 0 auto;
   @extend %extend_1;
   background-color: $color_red_orange_approx;
@@ -83,7 +83,7 @@ $bin-width: 36px;
     @extend %extend_1;
     content: '';
     position: absolute;
-    left: -8px;
+    left: -7px;
     background-color: $color_red_orange_approx;
     transition: 0.2s ease background-color;
   }
@@ -91,7 +91,7 @@ $bin-width: 36px;
     @extend %extend_1;
     content: '';
     position: absolute;
-    left: 8px;
+    left: 7px;
     background-color: $color_red_orange_approx;
     transition: 0.2s ease background-color;
   }
@@ -102,16 +102,15 @@ $bin-width: 36px;
   right: 0px;
   background: rgba(244, 67, 54, 0.5);
   height: 100%;
-  padding-right: 10px;
   align-items: center;
-  width: 60px;
+  width: #{$bin-width * 1.5};
   justify-content: center;
   margin-right: -200px;
   transition: margin-right 0.5s ease-in-out;
   button.delete {
     position: relative;
-    width: $bin-width;
-    height: $bin-height;
+    width: 100%;
+    height: 100%;
     background: transparent;
     outline: none;
     &:active > .bin-icon {

@@ -3,7 +3,7 @@ import { Observable } from 'rxjs'
 import { Task } from 'src/app/modals/task'
 import { Store } from '@ngrx/store'
 import { ConfigState, selectCompletedVisible } from 'src/app/store/config'
-import { selectActiveTasks, selectCompletedTasks } from 'src/app/store/tasks'
+import { selectActiveTasks, selectCompletedTasks, selectTasks } from 'src/app/store/tasks'
 import { initTask, deleteTask, toggleTask } from 'src/app/store/tasks/tasks.action'
 
 @Component({
@@ -12,12 +12,14 @@ import { initTask, deleteTask, toggleTask } from 'src/app/store/tasks/tasks.acti
   styleUrls: ['./home.component.scss']
 })
 export class HomeComponent implements OnInit {
+  allTasks$: Observable<Task[]>
   activeTasks$: Observable<Task[]>
   completedTasks$: Observable<Task[]>
   showCompleted$: Observable<boolean>
   constructor(private store: Store<ConfigState>) {}
 
   ngOnInit() {
+    this.allTasks$ = this.store.select(selectTasks)
     this.activeTasks$ = this.store.select(selectActiveTasks)
     this.completedTasks$ = this.store.select(selectCompletedTasks)
     this.showCompleted$ = this.store.select(selectCompletedVisible)

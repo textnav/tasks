@@ -1,6 +1,6 @@
 {
   "configVersion": 1,
-  "timestamp": 1577021394550,
+  "timestamp": 1577116378698,
   "index": "/tasks/index.html",
   "assetGroups": [
     {
@@ -10,8 +10,8 @@
       "urls": [
         "/tasks/favicon.ico",
         "/tasks/index.html",
-        "/tasks/main-es2015.c3c25c7dfaa820747a16.js",
-        "/tasks/main-es5.c3c25c7dfaa820747a16.js",
+        "/tasks/main-es2015.fb9b8fe87ebc0047629e.js",
+        "/tasks/main-es5.fb9b8fe87ebc0047629e.js",
         "/tasks/manifest.webmanifest",
         "/tasks/polyfills-es2015.2987770fde9daa1d8a2e.js",
         "/tasks/polyfills-es5.6696c533341b95a3d617.js",
@@ -67,9 +67,9 @@
     "/tasks/assets/icons/mstile-150x150.png": "ecc6dcf362728ec80eb0d2b79924d1d735a2c5ee",
     "/tasks/assets/icons/safari-pinned-tab.svg": "96d46d963f7004b851e1e6914e1129f1602c6785",
     "/tasks/favicon.ico": "f91507db77aea23b2e10b625d2b5fe955159ece9",
-    "/tasks/index.html": "53a14b30198873eab911328a01a3d58cc97bedee",
-    "/tasks/main-es2015.c3c25c7dfaa820747a16.js": "c03edbe8b4af58bb73ad7b5d64516378b048901d",
-    "/tasks/main-es5.c3c25c7dfaa820747a16.js": "f9b623b0199da20a58e3b4002d31323ef927055a",
+    "/tasks/index.html": "ad3b1eea0d9a70dfb2e4aa44cebe3ab61e66a3e2",
+    "/tasks/main-es2015.fb9b8fe87ebc0047629e.js": "5961a5dd23209d2cdf1d7bc424c158f39e1a3fe5",
+    "/tasks/main-es5.fb9b8fe87ebc0047629e.js": "77ac2eb718db28b14033fe00cd40f512fe9da292",
     "/tasks/manifest.webmanifest": "f63db12a329faa9607c5ed00f39ae5e2f8e00b5f",
     "/tasks/polyfills-es2015.2987770fde9daa1d8a2e.js": "cf5cbfa9134716054fb479ab21362146cdf1f2ff",
     "/tasks/polyfills-es5.6696c533341b95a3d617.js": "9ceb13edd4b10268f661814868dadb2b284f9745",

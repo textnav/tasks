@@ -8,6 +8,10 @@
   </span>
   <div class="label">
     <div class="text" [class.checked]="checked" [innerHTML]="text"></div>
-    <div *ngIf="dueDate" class="time">{{ dueDate | timeTo }} ({{ dueDate | date: 'medium' }})</div>
+    <div *ngIf="dueDate" class="time">
+      <span *ngIf="!checked">{{ dueDate | timeTo }} (</span>
+      <span>{{ dueDate | date: 'medium' }}</span>
+      <span *ngIf="!checked">) </span>
+    </div>
   </div>
 </div>

@@ -1,5 +1,14 @@
-<div class="task-item">
-  <app-checkbox [text]="task.text | tagHighlight" [dueDate]="task.dueDate" [checked]="task.done" (toggleCheckbox)="toggle()"></app-checkbox>
+<div class="task-item" [class.done]="task.done">
+  <app-checkbox (toggleCheckbox)="toggle()" [checked]="task.done">
+    <div class="label">
+      <div class="text" [class.checked]="task.done" [innerHTML]="task.text | tagHighlight"></div>
+      <div *ngIf="task.dueDate" class="time">
+        <span *ngIf="!task.done">{{ task.dueDate | timeTo }} (</span>
+        <span>{{ task.dueDate | date: 'medium' }}</span>
+        <span *ngIf="!task.done">) </span>
+      </div>
+    </div>
+  </app-checkbox>
   <div class="del-con">
     <button class="delete" (click)="delete()">
       <div class="bin-icon">

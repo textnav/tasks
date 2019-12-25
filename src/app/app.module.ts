@@ -6,7 +6,6 @@ import { ServiceWorkerModule } from '@angular/service-worker'
 import { environment } from '../environments/environment'
 import { HomeComponent } from './components/home/home.component'
 import { TaskItemComponent } from './components/task-item/task-item.component'
-import { CheckboxComponent } from './components/checkbox/checkbox.component'
 import { FooterComponent } from './components/footer/footer.component'
 import { AddTaskComponent } from './components/add-task/add-task.component'
 import { ReactiveFormsModule } from '@angular/forms'
@@ -25,7 +24,6 @@ import { BadgeListComponent } from './components/badge-list/badge-list.component
     AppComponent,
     HomeComponent,
     TaskItemComponent,
-    CheckboxComponent,
     FooterComponent,
     AddTaskComponent,
     TimeToPipe,

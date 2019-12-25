@@ -92,3 +92,38 @@
     opacity: 1;
   }
 }
+
+@keyframes done {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0.5;
+  }
+}
+
+@keyframes fadeInOut {
+  0% {
+    opacity: 0;
+    transform: translate3d(-20px, -50%, 0);
+  }
+
+  30% {
+    opacity: 1;
+    transform: translate3d(0, -50%, 0);
+  }
+
+  75% {
+    opacity: 1;
+    transform: translate3d(0, -50%, 0);
+  }
+
+  99% {
+    opacity: 0;
+    transform: translate3d(20px, -50%, 0);
+  }
+  100% {
+    opacity: 0;
+    transform: translate3d(200px, -50%, 0);
+  }
+}

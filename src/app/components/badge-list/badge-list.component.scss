@@ -1,6 +1,6 @@
 .badges {
   display: flex;
-  margin: 1rem 0.5rem;
+  margin: 2rem 0.5rem;
   flex-wrap: wrap;
   align-items: center;
   justify-content: center;
@@ -25,4 +25,24 @@
 .button {
   padding: 0.2rem 1rem;
   border: 1px solid rgba(255, 255, 255, 0.2);
+  position: relative;
+  border-radius: 4px;
+  margin: 0.5rem;
+  cursor: pointer;
+  user-select: none;
+  transition: transform ease-in 0.1s, box-shadow ease-in 0.25s;
+  box-shadow: 0 2px 25px rgba(255, 0, 130, 0.5);
+  &:hover {
+    transform: scale(1.03);
+    background: rgba(0, 0, 0, 0.1);
+    box-shadow: 0 2px 20px rgba(0, 0, 0, 0.15);
+  }
+
+  &:active {
+    transform: scale(0.96);
+
+    .badge {
+      transform: scale(1.2);
+    }
+  }
 }

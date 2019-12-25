@@ -1,23 +1,10 @@
 <div class="tasks">
-  <!-- <h1>
-    My Tasks
-    <span>Get things done, one item at a time.</span>
-  </h1> -->
+  <h1>My Tasks</h1>
   <app-add-task></app-add-task>
-  <ul>
-    <ng-container *ngIf="allTasks$ | async as tasks">
-      <li *ngFor="let item of tasks; trackBy: trackByFn">
-        <app-task-item [task]="item" (toggleTask)="toggleTask(item)" (deleteTask)="deleteTask(item.id)"></app-task-item>
-      </li>
-    </ng-container>
-    <!-- <ng-container *ngIf="showCompleted$ | async">
-      <ng-container *ngIf="completedTasks$ | async as tasks">
-        <li *ngFor="let item of tasks; trackBy: trackByFn">
-          <app-task-item [task]="item" (toggleTask)="toggleTask(item)" (deleteTask)="deleteTask(item.id)"></app-task-item>
-        </li>
-      </ng-container>
-    </ng-container> -->
+  <ul *ngIf="allTasks$ | async as tasks">
+    <li *ngFor="let item of tasks; trackBy: trackByFn">
+      <app-task-item [task]="item" (toggleTask)="toggleTask(item)" (deleteTask)="deleteTask(item.id)"></app-task-item>
+    </li>
   </ul>
 </div>
 <app-badge-list></app-badge-list>
-<!-- <!-- <app-footer></app-footer> -->

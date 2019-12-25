@@ -1,187 +1,201 @@
-//colors
-$white: #fff;
-$color_red_orange_approx: #f44336;
-$color_cerulean_approx: #03a9f4;
-$bin-height: 24px;
-$bin-width: 36px;
+@import '../../../styles/variables';
 
+//@extend-elements
 %extend_1 {
-  width: 2px;
-  height: #{$bin-height - 8};
-  border-radius: 4px;
+  transition: all 0s;
+  transform: scale(0);
+  content: '';
+  position: absolute;
+  display: block;
+  border-radius: 50%;
+  width: 25px;
+  height: 25px;
+  opacity: 1;
 }
+
+%extend_2 {
+  font-size: 0.75rem;
+  font-style: italic;
+}
+
+%extend_3 {
+  animation-duration: 2s;
+  animation-name: done;
+  animation-fill-mode: forwards;
+}
+
 .task-item {
+  width: 100%;
   display: flex;
   padding: 0 1rem;
-  justify-content: space-between;
   align-items: center;
-  min-height: #{$bin-height * 2};
   position: relative;
   overflow: hidden;
-  &:hover {
-    .del-con {
-      margin-right: 0;
-    }
+  .label {
+    flex-grow: 1;
   }
-  &.done {
-    opacity: 0.7;
-  }
-}
-.bin-icon {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  width: $bin-width;
-  height: $bin-height;
-  margin: #{$bin-height * -0.6} auto 0 #{$bin-width / -2};
-  border-radius: 50%;
-  z-index: 2;
-}
-.lid {
-  position: relative;
-  width: $bin-width;
-  height: 4px;
-  border-radius: 4px;
-  background-color: $color_red_orange_approx;
-  transition: 0.2s ease background-color;
-  &:before {
-    content: '';
-    position: absolute;
-    top: -4px;
-    right: 0;
-    left: 0;
-    width: 10px;
-    height: 6px;
-    margin: 0 auto;
-    border-radius: 10px 10px 0 0;
-    background-color: $color_red_orange_approx;
-    transition: 0.2s ease background-color;
-  }
-}
-.box {
-  position: relative;
-  height: #{$bin-height + 6};
-  margin: 2px 2px 0 2px;
-  border-radius: 0 0 8px 8px;
-  background-color: $color_red_orange_approx;
-  transition: 0.2s ease background-color;
-}
-.box-inner {
-  position: relative;
-  top: 3px;
-  width: $bin-height;
-  height: $bin-height;
-  margin: 0 auto;
-  background-color: $white;
-  border-radius: 0 0 5px 5px;
-}
-.bin-lines {
-  position: relative;
-  top: 4px;
-  margin: 0 auto;
-  @extend %extend_1;
-  background-color: $color_red_orange_approx;
-  transition: 0.2s ease background-color;
-  &:before {
-    @extend %extend_1;
-    content: '';
-    position: absolute;
-    left: -7px;
-    background-color: $color_red_orange_approx;
-    transition: 0.2s ease background-color;
-  }
-  &:after {
-    @extend %extend_1;
-    content: '';
-    position: absolute;
-    left: 7px;
-    background-color: $color_red_orange_approx;
-    transition: 0.2s ease background-color;
-  }
-}
-.del-con {
-  display: flex;
-  position: absolute;
-  right: 0px;
-  background: rgba(244, 67, 54, 0.5);
-  height: 100%;
-  align-items: center;
-  width: #{$bin-width * 1.5};
-  justify-content: center;
-  margin-right: -200px;
-  transition: margin-right 0.5s ease-in-out;
-  button.delete {
+  .check {
     position: relative;
+  }
+  input[type='checkbox'] {
+    opacity: 0;
     width: 100%;
     height: 100%;
-    background: transparent;
-    outline: none;
-    &:active > .bin-icon {
-      .lid {
-        background-color: $white;
-        animation: lift-up 0.8s ease 0.1s, shake_u 0.8s ease 0.1s, shake_l 0.2s ease 0.8s;
-        &:before {
-          background-color: $white;
+    position: absolute;
+    cursor: pointer;
+    &:focus {
+      outline: 0;
+    }
+    &:checked + .ripple-container {
+      .check-off {
+        border-color: $text-color;
+      }
+      .check-on {
+        transform: scale(0.8);
+        transition: transform 0.3s;
+        color: $text-color;
+        &:after {
+          content: '';
+          display: block;
+          width: 8px;
+          height: 20px;
+          border: solid $text-color;
+          border-width: 0 2px 2px 0;
+          transform: rotate(45deg);
+          margin: 0 7px;
         }
       }
-      .box {
-        background-color: $white;
-        animation: shake 0.2s ease 0.1s;
-      }
-      .box-inner {
-        background-color: $white;
-      }
-      .bin-lines {
-        background-color: $color_cerulean_approx;
+      .check-ripple {
         &:before {
-          background-color: $color_cerulean_approx;
+          transition: all 0.65s cubic-bezier(0.25, 0.8, 0.25, 1);
+          opacity: 0;
+          transform: scale(3);
         }
         &:after {
-          background-color: $color_cerulean_approx;
+          transition: all 0.65s cubic-bezier(0.25, 0.8, 0.25, 1);
+          opacity: 0;
+          transform: scale(1.5);
+        }
+      }
+    }
+    + .ripple-container {
+      width: auto;
+      position: relative;
+      display: inline-block;
+      width: 25px;
+      height: 25px;
+      pointer-events: none;
+      &:before {
+        content: '';
+        position: absolute;
+        border-radius: 2px;
+        display: block;
+        height: auto;
+        left: 0;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        transition: all 0.5s;
+      }
+      .check-off {
+        position: absolute;
+        width: 25px;
+        height: 25px;
+        left: 0;
+        top: 0;
+        border-radius: 50%;
+        border: 1px solid $text-color;
+        transition: border-color ease 0.28s;
+      }
+      .check-on {
+        transform: scale(0);
+        transition: all 0s;
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        text-align: center;
+        line-height: 25px;
+      }
+      .check-ripple {
+        &:before {
+          @extend %extend_1;
+          background-color: $bg-color-start;
+        }
+        &:after {
+          @extend %extend_1;
+          background-color: $bg-color-end;
         }
       }
     }
   }
 }
-app-checkbox {
-  width: 100%;
-}
-
 .label {
+  margin-left: 0.5rem;
+  padding-left: 5px;
   .time {
-    margin-left: 0.5rem;
-    padding-left: 5px;
     animation: appear 1s normal forwards;
+    margin-right: 10px;
     span {
-      font-size: 1rem;
-      font-style: italic;
+      @extend %extend_2;
+    }
+    time {
+      @extend %extend_2;
     }
   }
 }
 .text {
   flex: 1;
   position: relative;
-  font-size: 1.5rem;
+  font-size: 1rem;
   vertical-align: top;
-  line-height: 2rem;
-  margin-left: 0.5rem;
-  padding: 5px;
   word-break: break-word;
-  &.checked {
-    &::after {
-      content: ' ';
-      position: absolute;
-      top: -0.4rem;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      animation-name: strike;
-      animation-duration: 0.5s;
-      animation-timing-function: linear;
-      animation-iteration-count: 1;
-      animation-fill-mode: forwards;
-      background-image: linear-gradient(transparent 1.8rem, #fdfcd3 0.2rem);
-      background-size: 100% 2rem;
-    }
+}
+.task-msg {
+  transform: translate3d(200px, -50%, 0);
+  right: 5px;
+  top: 50%;
+  position: absolute;
+  text-transform: uppercase;
+  font-size: 12px;
+  line-height: 16px;
+  opacity: 0;
+  padding: 5px;
+  background-color: $bg-color-end;
+  border-radius: 3px;
+}
+.done {
+  .task-msg {
+    animation-duration: 2s;
+    animation-name: fadeInOut;
+  }
+  .check {
+    @extend %extend_3;
+  }
+  .label {
+    @extend %extend_3;
+  }
+}
+button.delete {
+  cursor: pointer;
+  background: transparent;
+  color: white;
+  font-weight: 900;
+  text-transform: uppercase;
+  line-height: 25px;
+  border-radius: 3px;
+  outline: none;
+  padding: 0;
+  margin-right: 10px;
+  user-select: none;
+  &:hover {
+    transform: scale(1.03);
+    box-shadow: 0 2px 20px rgba(0, 0, 0, 0.15);
+  }
+
+  &:active {
+    transform: scale(0.96);
+    background-color: $bg-color-end;
   }
 }

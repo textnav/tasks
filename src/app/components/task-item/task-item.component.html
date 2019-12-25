@@ -1,24 +1,23 @@
 <div class="task-item" [class.done]="task.done">
-  <app-checkbox (toggleCheckbox)="toggle()" [checked]="task.done">
-    <div class="label">
-      <div class="text" [class.checked]="task.done" [innerHTML]="task.text | tagHighlight"></div>
-      <div *ngIf="task.dueDate" class="time">
+  <div class="check">
+    <input type="checkbox" [checked]="task.done" (change)="toggle()" />
+    <div class="ripple-container">
+      <div class="check-off"></div>
+      <div class="check-on"></div>
+      <div class="check-ripple"></div>
+    </div>
+  </div>
+  <div class="label">
+    <div class="text" [class.checked]="task.done" [innerHTML]="task.text | tagHighlight"></div>
+    <div class="flex">
+      <div class="time" *ngIf="task.dueDate">
         <span *ngIf="!task.done">{{ task.dueDate | timeTo }} (</span>
-        <span>{{ task.dueDate | date: 'medium' }}</span>
+        <time>{{ task.dueDate | date: 'medium' }}</time>
         <span *ngIf="!task.done">) </span>
       </div>
+      <button aria-label="delete task" class="delete">Edit</button>
+      <button aria-label="delete task" class="delete" (click)="delete()">Delete</button>
     </div>
-  </app-checkbox>
-  <div class="del-con">
-    <button aria-label="delete task" class="delete" (click)="delete()">
-      <div class="bin-icon">
-        <div class="lid"></div>
-        <div class="box">
-          <div class="box-inner">
-            <div class="bin-lines"></div>
-          </div>
-        </div>
-      </div>
-    </button>
   </div>
+  <span class="task-msg">Well done!</span>
 </div>

@@ -38,11 +38,11 @@ export class TaskService {
   private registerToEvents(onlineOfflineService: OnlineOfflineService) {
     onlineOfflineService.connectionChanged.subscribe(online => {
       if (online) {
-        console.log('went online')
-        console.log('sending all stored items')
+        // console.log('went online')
+        // console.log('sending all stored items')
         this.sendItemsFromIndexedDb()
       } else {
-        console.log('went offline, storing in indexdb')
+        // console.log('went offline, storing in indexdb')
       }
     })
   }
@@ -57,7 +57,7 @@ export class TaskService {
       .add(todo)
       .then(async () => {
         const allItems: Task[] = await this.db.todos.toArray()
-        console.log('saved in DB, DB is now', allItems)
+        // console.log('saved in DB, DB is now', allItems)
       })
       .catch(e => {
         alert('Error: ' + (e.stack || e))
@@ -68,7 +68,7 @@ export class TaskService {
       .delete(id)
       .then(async () => {
         const allItems: Task[] = await this.db.todos.toArray()
-        console.log('saved in DB, DB is now', allItems)
+        // console.log('saved in DB, DB is now', allItems)
       })
       .catch(e => {
         alert('Error: ' + (e.stack || e))
@@ -79,7 +79,7 @@ export class TaskService {
       .update(task.id, { done: !task.done })
       .then(async () => {
         const allItems: Task[] = await this.db.todos.toArray()
-        console.log('saved in DB, DB is now', allItems)
+        // console.log('saved in DB, DB is now', allItems)
       })
       .catch(e => {
         alert('Error: ' + (e.stack || e))
@@ -90,7 +90,7 @@ export class TaskService {
     const allItems: Task[] = await this.db.todos.toArray()
     allItems.forEach((item: Task) => {
       this.db.todos.delete(item.id).then(() => {
-        console.log(`item ${item.id} sent and deleted locally`)
+        // console.log(`item ${item.id} sent and deleted locally`)
       })
     })
   }

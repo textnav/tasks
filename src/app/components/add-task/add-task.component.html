@@ -1,3 +1,5 @@
 <form [formGroup]="addTaskForm" (ngSubmit)="onSubmit()">
-  <input type="text" formControlName="task" placeholder="Please add task here, Use # to add tags e.g. #projectX" />
+  <label>
+    <input type="text" formControlName="task" placeholder="Please add task here, Use # to add tags e.g. #projectX" />
+  </label>
 </form>

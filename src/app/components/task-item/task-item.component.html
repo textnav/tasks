@@ -7,7 +7,7 @@
       <div class="check-ripple"></div>
     </div>
   </div>
-  <div class="label">
+  <div class="label" *ngIf="!isEditing">
     <div class="text" [class.checked]="task.done" [innerHTML]="task.text | tagHighlight"></div>
     <div class="flex">
       <div class="time" *ngIf="task.dueDate">
@@ -15,8 +15,17 @@
         <time>{{ task.dueDate | date: 'medium' }}</time>
         <span *ngIf="!task.done">) </span>
       </div>
-      <button aria-label="delete task" class="delete">Edit</button>
+      <button aria-label="delete task" class="delete" (click)="edit()">Edit</button>
       <button aria-label="delete task" class="delete" (click)="delete()">Delete</button>
+    </div>
+  </div>
+  <div class="label" *ngIf="isEditing">
+    <div class="text">
+      <app-add-task [item]="task" (savedTask)="save()"></app-add-task>
+    </div>
+    <div class="flex">
+      <button aria-label="delete task" class="delete" (click)="save()">Save</button>
+      <button aria-label="delete task" class="delete" (click)="cancel()">Cancel</button>
     </div>
   </div>
   <span class="task-msg">Well done!</span>

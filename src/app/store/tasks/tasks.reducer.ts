@@ -20,7 +20,7 @@ export const reducer = createReducer(
       tags,
       dueDate
     }
-    const tasks = [...state.tasks, task]
+    const tasks = [...state.tasks.filter(item => item.id !== id), task]
 
     return { ...state, tasks }
   }),

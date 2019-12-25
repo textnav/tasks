@@ -20,10 +20,16 @@ export class TasksEffects {
       mergeMap(res => {
         const text = res.text
         const tags = this.tagService.getTags(text)
-        const id = UUID.UUID()
+        const id = res.id ? res.id : UUID.UUID()
         const dueDate = this.tagService.getDate(text)
-        const task: Task = { text, tags, id, dueDate, done: false }
-        this.taskService.addTodo(task)
+        const task: Task = { text, tags, id, dueDate, done: res.done }
+
+        if (res.id) {
+          this.taskService.editTodo(task)
+        } else {
+          this.taskService.addTodo(task)
+        }
+
         return [addTaskSuccess(task), addTags(tags)]
       })
     )
@@ -38,11 +44,11 @@ export class TasksEffects {
     { dispatch: false }
   )
 
-  editTask$ = createEffect(
+  toggleTask$ = createEffect(
     () =>
       this.actions$.pipe(
         ofType(toggleTask),
-        map(res => this.taskService.editTodo(res.task))
+        map(res => this.taskService.editTodo({ ...res.task, done: !res.task.done }))
       ),
     { dispatch: false }
   )

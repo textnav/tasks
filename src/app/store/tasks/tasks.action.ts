@@ -12,7 +12,7 @@ export enum TasksActionTypes {
   ADD_TAGS = '[Tasks] Add Tags'
 }
 
-export const addTask = createAction(TasksActionTypes.ADD_TASK, (text: string) => ({ text }))
+export const addTask = createAction(TasksActionTypes.ADD_TASK, (text: string, id: string, done: boolean) => ({ text, id, done }))
 export const addTaskSuccess = createAction(TasksActionTypes.ADD_TASK_SUCCESS, props<Task>())
 export const initTask = createAction(TasksActionTypes.INIT_TASK)
 export const initTaskSuccess = createAction(TasksActionTypes.INIT_TASK_SUCCESS, props<{ tasks: Task[] }>())

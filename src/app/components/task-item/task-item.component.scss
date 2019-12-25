@@ -58,11 +58,11 @@
           content: '';
           display: block;
           width: 8px;
-          height: 20px;
-          border: solid $text-color;
+          height: 16px;
+          border: solid #fff;
           border-width: 0 2px 2px 0;
           transform: rotate(45deg);
-          margin: 0 7px;
+          margin: 2px 8px;
         }
       }
       .check-ripple {

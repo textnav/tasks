@@ -11,6 +11,17 @@ export interface State extends fromRoot.State {
 export const selectTasksState = createFeatureSelector<TasksState>('tasks')
 
 export const selectTasks = createSelector(selectTasksState, fromTasks.getTasksState)
+export const selectSortedTasks = createSelector(selectTasks, tasks =>
+  tasks.slice().sort((a, b) => {
+    if (a.dueDate > b.dueDate) {
+      return 1
+    }
+    if (b.dueDate > a.dueDate) {
+      return -1
+    }
+    return 0
+  })
+)
 export const selectActiveTasks = createSelector(selectTasks, tasks => tasks.filter(task => !task.done))
 export const selectCompletedTasks = createSelector(selectTasks, tasks => tasks.filter(task => task.done))
 export const selectCompletedTags = createSelector(selectCompletedTasks, tasks =>

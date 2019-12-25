@@ -76,7 +76,7 @@ export class TaskService {
   }
   private editInIndexedDb(task) {
     this.db.todos
-      .update(task.id, { done: !task.done })
+      .update(task.id, { ...task })
       .then(async () => {
         const allItems: Task[] = await this.db.todos.toArray()
         // console.log('saved in DB, DB is now', allItems)

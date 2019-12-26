@@ -1,7 +1,29 @@
 form {
+  .form-group {
+    position: relative;
+    margin: 1.5rem 0;
+  }
+
+  .form-control-placeholder {
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 0 16px;
+    transition: all 200ms;
+    opacity: 0.5;
+    cursor: text;
+  }
+
+  .form-control:focus + .form-control-placeholder,
+  .form-control.ng-valid + .form-control-placeholder {
+    font-size: 75%;
+    transform: translate3d(0, -100%, 0);
+    opacity: 1;
+    cursor: pointer;
+  }
+
   input {
-    padding: 1rem;
-    text-align: center;
+    padding: 0.5rem 1rem;
     font-weight: normal;
     background: transparent;
     outline: none;
@@ -12,6 +34,17 @@ form {
     &::placeholder {
       color: white;
       opacity: 0.3;
+    }
+  }
+  &.edit {
+    input {
+      padding: 0.5rem 0;
+    }
+    .form-control-placeholder {
+      display: none;
+    }
+    .form-group {
+      margin: 0;
     }
   }
 }

@@ -136,7 +136,7 @@
   padding-left: 5px;
   .time {
     animation: appear 1s normal forwards;
-    margin-right: 10px;
+    margin-right: 20px;
     span {
       @extend %extend_2;
     }
@@ -177,25 +177,27 @@
     @extend %extend_3;
   }
 }
-button.delete {
-  cursor: pointer;
-  background: transparent;
-  color: white;
-  font-weight: 900;
-  text-transform: uppercase;
-  line-height: 25px;
-  border-radius: 3px;
-  outline: none;
-  padding: 0;
-  margin-right: 10px;
-  user-select: none;
-  &:hover {
-    transform: scale(1.03);
-    box-shadow: 0 2px 20px rgba(0, 0, 0, 0.15);
-  }
+.actions {
+  margin-left: -10px;
+  button {
+    cursor: pointer;
+    background: transparent;
+    color: white;
+    font-weight: 900;
+    text-transform: uppercase;
+    line-height: 25px;
+    border-radius: 3px;
+    outline: none;
+    padding: 0 10px;
+    margin-right: 5px;
+    user-select: none;
+    &:hover {
+      transition: transform 200ms;
+      transform: scale(1.1);
+    }
 
-  &:active {
-    transform: scale(0.96);
-    background-color: $bg-color-end;
+    &:active {
+      transform: scale(0.96);
+    }
   }
 }

@@ -1,4 +1,4 @@
-<div class="task-item" [class.done]="task.done">
+<div class="task-item" [class.done]="task.done && !isEditing">
   <div class="check">
     <input type="checkbox" [checked]="task.done" (change)="toggle()" />
     <div class="ripple-container">
@@ -15,17 +15,19 @@
         <time>{{ task.dueDate | date: 'medium' }}</time>
         <span *ngIf="!task.done">) </span>
       </div>
-      <button aria-label="delete task" class="delete" (click)="edit()">Edit</button>
-      <button aria-label="delete task" class="delete" (click)="delete()">Delete</button>
+      <div class="flex actions">
+        <button aria-label="edit task" (click)="edit()">Edit</button>
+        <button aria-label="delete task" (click)="delete()">Delete</button>
+      </div>
     </div>
   </div>
   <div class="label" *ngIf="isEditing">
     <div class="text">
       <app-add-task [item]="task" (savedTask)="save()"></app-add-task>
     </div>
-    <div class="flex">
-      <button aria-label="delete task" class="delete" (click)="save()">Save</button>
-      <button aria-label="delete task" class="delete" (click)="cancel()">Cancel</button>
+    <div class="flex actions">
+      <button aria-label="cancel save" (click)="cancel()">Cancel</button>
+      <small>Please press enter/return to save</small>
     </div>
   </div>
   <span class="task-msg">Well done!</span>

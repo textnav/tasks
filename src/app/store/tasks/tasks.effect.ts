@@ -3,17 +3,36 @@ import { Actions, createEffect, ofType } from '@ngrx/effects'
 import { UUID } from 'angular2-uuid'
 
 import { addTask, addTaskSuccess, initTask, initTaskSuccess, addTags, deleteTask, toggleTask } from './tasks.action'
-import { map, catchError, mergeMap } from 'rxjs/operators'
+import { map, catchError, mergeMap, withLatestFrom, switchMap } from 'rxjs/operators'
 import { TagsService } from 'src/app/services/tags.service'
 import { TaskService } from 'src/app/services/task.service'
 import { Task } from 'src/app/modals/task'
 import { of } from 'rxjs'
+import { selectActiveTasks, selectCompletedTasks, TasksState } from '.'
+import { Store, select } from '@ngrx/store'
 
 @Injectable()
 export class TasksEffects {
-  constructor(private actions$: Actions, private tagService: TagsService, private readonly taskService: TaskService) {}
+  constructor(
+    private actions$: Actions,
+    private tagService: TagsService,
+    private readonly taskService: TaskService,
+    private store: Store<TasksState>
+  ) {}
 
   // with createEffect
+  changeTitle$ = createEffect(
+    () =>
+      this.actions$.pipe(
+        ofType(addTask, deleteTask, toggleTask, initTaskSuccess),
+        mergeMap(() => of(true).pipe(withLatestFrom(this.store.select(selectCompletedTasks), this.store.select(selectActiveTasks)))),
+        map(([, completed, active]) => {
+          document.title = `Tasks | ⭕${active.length} Active | ✅${completed.length} Done`
+        })
+      ),
+    { dispatch: false }
+  )
+
   addTask$ = createEffect(() =>
     this.actions$.pipe(
       ofType(addTask),

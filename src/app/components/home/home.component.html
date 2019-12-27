@@ -1,4 +1,4 @@
-<div class="tasks">
+<main class="tasks">
   <h1>My Tasks</h1>
   <app-add-task></app-add-task>
   <ul *ngIf="allTasks$ | async as tasks">
@@ -6,5 +6,5 @@
       <app-task-item [task]="item" (toggleTask)="toggleTask(item)" (deleteTask)="deleteTask(item.id)"></app-task-item>
     </li>
   </ul>
-</div>
+</main>
 <app-badge-list></app-badge-list>

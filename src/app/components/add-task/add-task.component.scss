@@ -12,6 +12,10 @@ form {
     transition: all 200ms;
     opacity: 0.5;
     cursor: text;
+    width: 100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
   }
 
   .form-control:focus + .form-control-placeholder,

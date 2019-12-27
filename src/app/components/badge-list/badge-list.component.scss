@@ -10,12 +10,14 @@
 
 .badge {
   border-radius: 50%;
-  width: 1.5rem;
-  height: 1.5rem;
+  width: 1.4rem;
+  height: 1.4rem;
   position: absolute;
-  background: white;
-  border: 2px solid opacify($bg-color-end, 0.5);
-  color: opacify($bg-color-end, 0.5);
+  background: $bg-color-end;
+  border-width: 1px;
+  border-style: solid;
+  border-color: lighten($text-color, 80%);
+  color: $text-color;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -28,7 +30,7 @@
 }
 .button {
   padding: 0.2rem 1rem;
-  border: 1px solid rgba(255, 255, 255, 0.2);
+  border: 1px solid lighten($text-color, 80%);
   position: relative;
   border-radius: 4px;
   margin: 0.5rem;

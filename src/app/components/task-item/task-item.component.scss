@@ -59,7 +59,7 @@
           display: block;
           width: 8px;
           height: 16px;
-          border: solid #fff;
+          border: solid $text-color;
           border-width: 0 2px 2px 0;
           transform: rotate(45deg);
           margin: 2px 8px;
@@ -162,7 +162,8 @@
   line-height: 16px;
   opacity: 0;
   padding: 5px;
-  background-color: $bg-color-end;
+  color: $bg-color-end;
+  background-color: $text-color;
   border-radius: 3px;
 }
 .done {
@@ -182,7 +183,7 @@
   button {
     cursor: pointer;
     background: transparent;
-    color: white;
+    color: $text-color;
     font-weight: 900;
     text-transform: uppercase;
     line-height: 25px;
@@ -192,8 +193,7 @@
     margin-right: 5px;
     user-select: none;
     &:hover {
-      transition: transform 200ms;
-      transform: scale(1.1);
+      transform: scale(1.03);
     }
 
     &:active {

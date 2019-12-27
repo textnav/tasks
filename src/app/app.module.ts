@@ -6,7 +6,6 @@ import { ServiceWorkerModule } from '@angular/service-worker'
 import { environment } from '../environments/environment'
 import { HomeComponent } from './components/home/home.component'
 import { TaskItemComponent } from './components/task-item/task-item.component'
-import { FooterComponent } from './components/footer/footer.component'
 import { AddTaskComponent } from './components/add-task/add-task.component'
 import { ReactiveFormsModule } from '@angular/forms'
 import { StoreModule } from '@ngrx/store'
@@ -20,16 +19,7 @@ import { TagHighlightPipe } from './pipes/tag-highlight.pipe'
 import { BadgeListComponent } from './components/badge-list/badge-list.component'
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    HomeComponent,
-    TaskItemComponent,
-    FooterComponent,
-    AddTaskComponent,
-    TimeToPipe,
-    TagHighlightPipe,
-    BadgeListComponent
-  ],
+  declarations: [AppComponent, HomeComponent, TaskItemComponent, AddTaskComponent, TimeToPipe, TagHighlightPipe, BadgeListComponent],
   imports: [
     BrowserModule,
     ReactiveFormsModule,

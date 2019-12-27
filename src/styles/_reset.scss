@@ -59,13 +59,7 @@ thead,
 tr,
 th,
 td,
-article,
-aside,
-canvas,
 details,
-figure,
-figcaption,
-hgroup,
 menu,
 footer,
 header,
@@ -74,13 +68,9 @@ section,
 summary,
 time,
 mark,
-audio,
-video,
-img,
 main,
 input,
-textarea,
-select {
+textarea {
   border: 0;
   margin: 0;
   padding: 0;
@@ -88,19 +78,10 @@ select {
   -moz-box-sizing: border-box;
   box-sizing: border-box;
 }
-article,
-aside,
-canvas,
-figure,
-figure img,
-figcaption,
-hgroup,
 footer,
 header,
 nav,
 section,
-audio,
-video,
 main,
 img {
   display: block;
@@ -183,21 +164,6 @@ a {
     border: 0;
   }
 }
-progress[value] {
-  -webkit-appearance: none;
-  appearance: none;
-  width: 100%;
-  height: 35px;
-  border: none;
-  color: inherit;
-  &::-webkit-progress-bar {
-    background-color: #eee;
-    border-radius: 2px;
-  }
-  &::-webkit-progress-value {
-    background-color: #2980b9;
-  }
-}
 
 li {
   list-style-type: none;
@@ -211,17 +177,8 @@ textarea {
   padding: 10px;
 }
 
-input,
-select {
-  vertical-align: middle;
-}
-
-select {
-  background: white;
-  -webkit-appearance: menulist-button;
-}
-
 input {
+  vertical-align: middle;
   font-family: $font-family;
   &[type='search'] {
     &::-ms-clear,
@@ -255,18 +212,9 @@ input[type='submit'] {
   border: 0;
   vertical-align: middle;
   -webkit-appearance: button;
+  font-family: $font-family;
   &:disabled {
     cursor: not-allowed;
     opacity: 0.5;
-  }
-}
-table {
-  border-collapse: collapse;
-  border-spacing: 0;
-  max-width: 100%;
-  width: 100%;
-  td,
-  tr {
-    border: 0;
   }
 }

@@ -1,3 +1,5 @@
+@import '../../../styles/variables';
+
 form {
   .form-group {
     position: relative;
@@ -32,11 +34,11 @@ form {
     background: transparent;
     outline: none;
     width: 100%;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.3);
-    color: white;
+    border-bottom: 1px solid lighten($text-color, 80%);
+    color: $text-color;
     font-size: 1rem;
     &::placeholder {
-      color: white;
+      color: $text-color;
       opacity: 0.3;
     }
   }

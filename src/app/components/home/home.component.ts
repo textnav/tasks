@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core'
+import { Component, OnInit, ChangeDetectionStrategy, ChangeDetectorRef } from '@angular/core'
 import { Observable } from 'rxjs'
 import { Task } from 'src/app/modals/task'
 import { Store } from '@ngrx/store'
@@ -9,7 +9,8 @@ import { initTask, deleteTask, toggleTask } from 'src/app/store/tasks/tasks.acti
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
-  styleUrls: ['./home.component.scss']
+  styleUrls: ['./home.component.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class HomeComponent implements OnInit {
   allTasks$: Observable<Task[]>

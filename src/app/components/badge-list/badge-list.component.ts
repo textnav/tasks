@@ -1,4 +1,4 @@
-import { Component, OnInit, OnDestroy } from '@angular/core'
+import { Component, OnInit, OnDestroy, ChangeDetectionStrategy, ChangeDetectorRef } from '@angular/core'
 import { Store } from '@ngrx/store'
 import { ConfigState } from 'src/app/store/config'
 import { selectActiveTags, selectCompletedTags } from 'src/app/store/tasks'
@@ -7,13 +7,14 @@ import { takeWhile } from 'rxjs/operators'
 @Component({
   selector: 'app-badge-list',
   templateUrl: './badge-list.component.html',
-  styleUrls: ['./badge-list.component.scss']
+  styleUrls: ['./badge-list.component.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class BadgeListComponent implements OnInit, OnDestroy {
   completedTags: Map<string, number>
   activeTags: Map<string, number>
   isComponentActive = true
-  constructor(private store: Store<ConfigState>) {
+  constructor(private store: Store<ConfigState>, private changeDetector: ChangeDetectorRef) {
     this.completedTags = new Map()
     this.activeTags = new Map()
   }
@@ -52,5 +53,6 @@ export class BadgeListComponent implements OnInit, OnDestroy {
         }
       })
     }
+    this.changeDetector.detectChanges()
   }
 }

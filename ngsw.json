@@ -1,6 +1,6 @@
 {
   "configVersion": 1,
-  "timestamp": 1577458729342,
+  "timestamp": 1596713775531,
   "index": "/tasks/index.html",
   "assetGroups": [
     {
@@ -10,14 +10,14 @@
       "urls": [
         "/tasks/favicon.ico",
         "/tasks/index.html",
-        "/tasks/main-es2015.ae7a249c8a9d6af75c44.js",
-        "/tasks/main-es5.ae7a249c8a9d6af75c44.js",
+        "/tasks/main-es2015.0588e00a93dc9c0c5558.js",
+        "/tasks/main-es5.0588e00a93dc9c0c5558.js",
         "/tasks/manifest.webmanifest",
         "/tasks/polyfills-es2015.2987770fde9daa1d8a2e.js",
         "/tasks/polyfills-es5.6696c533341b95a3d617.js",
         "/tasks/runtime-es2015.edb2fcf2778e7bf1d426.js",
         "/tasks/runtime-es5.edb2fcf2778e7bf1d426.js",
-        "/tasks/styles.03cf4b6454e062367fed.css"
+        "/tasks/styles.fb1c70714156385c8ee3.css"
       ],
       "patterns": []
     },
@@ -42,7 +42,15 @@
         "/tasks/assets/icons/icon-72x72.png",
         "/tasks/assets/icons/icon-96x96.png",
         "/tasks/assets/icons/mstile-150x150.png",
-        "/tasks/assets/icons/safari-pinned-tab.svg"
+        "/tasks/assets/icons/safari-pinned-tab.svg",
+        "/tasks/assets/images/border.gif",
+        "/tasks/assets/images/circle.svg",
+        "/tasks/assets/images/close.svg",
+        "/tasks/assets/images/delete.svg",
+        "/tasks/assets/images/edit.svg",
+        "/tasks/assets/images/laptop.svg",
+        "/tasks/assets/images/tick copy.svg",
+        "/tasks/assets/images/tick.svg"
       ],
       "patterns": []
     }
@@ -66,16 +74,24 @@
     "/tasks/assets/icons/icon-96x96.png": "e6a8ad657c72e7880a6948669e80fb7a215636f7",
     "/tasks/assets/icons/mstile-150x150.png": "ecc6dcf362728ec80eb0d2b79924d1d735a2c5ee",
     "/tasks/assets/icons/safari-pinned-tab.svg": "96d46d963f7004b851e1e6914e1129f1602c6785",
+    "/tasks/assets/images/border.gif": "be96d1f29890edafaf63a4d370a2712e2aa1c837",
+    "/tasks/assets/images/circle.svg": "874ccbd05584ddf21c78ec1ef9be269c7b4b7e6a",
+    "/tasks/assets/images/close.svg": "659fd929be5d437be546f5ba94c944a819b81946",
+    "/tasks/assets/images/delete.svg": "4d56810b84e419663012fd76645442040e64a085",
+    "/tasks/assets/images/edit.svg": "38c7bca4bb70c602bddb47dc3b64980ec61c27f2",
+    "/tasks/assets/images/laptop.svg": "5fd85095ad1bdc9614822f9428cc31bec4e58dbb",
+    "/tasks/assets/images/tick copy.svg": "7c9abeb6adf3e53ad451c43f37fdaf00aba3a875",
+    "/tasks/assets/images/tick.svg": "da2a36a32ad267c925851b46ed9d45a59d603efc",
     "/tasks/favicon.ico": "f91507db77aea23b2e10b625d2b5fe955159ece9",
-    "/tasks/index.html": "3a028a0b92ece273b3a88d5b4d419a66e5e7dab9",
-    "/tasks/main-es2015.ae7a249c8a9d6af75c44.js": "ab964f68398c28ca3058e1e70d514267c115acc3",
-    "/tasks/main-es5.ae7a249c8a9d6af75c44.js": "3388169294a98adb0994e5fb29a04cf5ba2fa09a",
+    "/tasks/index.html": "206e3a4136d19b2340ce4e54c2a737eaaea80319",
+    "/tasks/main-es2015.0588e00a93dc9c0c5558.js": "feb213c1c497a98254eb40b3a1ecdf6dba4fdf53",
+    "/tasks/main-es5.0588e00a93dc9c0c5558.js": "f0c133941c17661ae270765f2e0977a12ed7daff",
     "/tasks/manifest.webmanifest": "f63db12a329faa9607c5ed00f39ae5e2f8e00b5f",
     "/tasks/polyfills-es2015.2987770fde9daa1d8a2e.js": "cf5cbfa9134716054fb479ab21362146cdf1f2ff",
-    "/tasks/polyfills-es5.6696c533341b95a3d617.js": "9ceb13edd4b10268f661814868dadb2b284f9745",
+    "/tasks/polyfills-es5.6696c533341b95a3d617.js": "6bff0c03e05bb347d213ad1b3674045eb892d189",
     "/tasks/runtime-es2015.edb2fcf2778e7bf1d426.js": "a9aafcf49f49145093fc831efd9b8e2f6c71bb9c",
     "/tasks/runtime-es5.edb2fcf2778e7bf1d426.js": "a9aafcf49f49145093fc831efd9b8e2f6c71bb9c",
-    "/tasks/styles.03cf4b6454e062367fed.css": "9f8fe4fe289cec86fa2daa541e545871b8f54429"
+    "/tasks/styles.fb1c70714156385c8ee3.css": "4f5de5af91430b249251a2caa1bafb17e84c695b"
   },
   "navigationUrls": [
     {

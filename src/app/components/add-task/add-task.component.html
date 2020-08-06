@@ -1,8 +1,8 @@
 <form [formGroup]="addTaskForm" (ngSubmit)="onSubmit()" [class.edit]="!!item">
   <div class="form-group">
-    <input class="form-control" id="addTask{{ item?.id }}" type="text" formControlName="task" />
-    <label class="form-control-placeholder" for="addTask{{ item?.id }}">
-      Please add task here, Use # to add tags and natural language to add time e.g. Work on #projectX next week
+    <input class="form-control form__input" id="addTask{{ item?.id }}" type="text" formControlName="task" />
+    <label class="form-control-placeholder form__label" for="addTask{{ item?.id }}">
+      Use # to add tags and natural language to add time e.g. Work on #projectX next week
     </label>
   </div>
 </form>

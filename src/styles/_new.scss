@@ -1,0 +1,60 @@
+.heading {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1rem;
+}
+.heading__title {
+  transform: rotate(2deg);
+  padding: 0.2rem 1.2rem;
+  border-radius: 20% 5% 20% 5%/5% 20% 25% 20%;
+  background-color: $bg-color-end;
+  color: white;
+  font-size: 1.5rem;
+}
+@media only screen and (min-width: 500px) {
+  .heading__title {
+    font-size: 2rem;
+  }
+}
+.heading__img {
+  height: 100px;
+}
+
+.button {
+  padding: 0;
+  border: none;
+  transform: rotate(4deg);
+  transform-origin: center;
+  font-family: 'Gochi Hand', cursive;
+  text-decoration: none;
+  padding-bottom: 3px;
+  border-radius: 5px;
+  box-shadow: 0 2px 0 hsl(198, 1%, 29%);
+  transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  background-image: url('/assets/images/border.gif');
+  background-color: $bg-color-start;
+}
+.button span {
+  background: #f1f5f8;
+  display: block;
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+  border: 2px solid hsl(198, 1%, 29%);
+}
+.button:active,
+.button:focus {
+  transform: translateY(4px);
+  padding-bottom: 0px;
+  outline: 0;
+}
+.toDoList {
+  text-align: left;
+  li {
+    position: relative;
+    padding: 0.5rem;
+  }
+  li:hover {
+    text-decoration: line-through wavy #24bffb;
+  }
+}

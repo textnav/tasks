@@ -1,50 +1,27 @@
 @import '../../../styles/variables';
 
 form {
-  .form-group {
-    position: relative;
-    margin: 1.5rem 0;
+  .form__label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-size: 0.8rem;
   }
-
-  .form-control-placeholder {
-    position: absolute;
-    top: 0;
-    left: 0;
-    padding: 0 16px;
-    transition: all 200ms;
-    opacity: 0.5;
-    cursor: text;
-    width: 100%;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    white-space: nowrap;
-  }
-
-  .form-control:focus + .form-control-placeholder,
-  .form-control.ng-valid + .form-control-placeholder {
-    font-size: 75%;
-    transform: translate3d(0, -100%, 0);
-    opacity: 1;
-    cursor: pointer;
-  }
-
-  input {
-    padding: 0.5rem 1rem;
-    font-weight: normal;
-    background: transparent;
-    outline: none;
-    width: 100%;
-    border-bottom: 1px solid lighten($text-color, 80%);
-    color: $text-color;
+  .form__input {
+    box-sizing: border-box;
+    background-color: transparent;
+    border-bottom: dashed 3px $bg-color-end;
+    font-family: 'Gochi Hand', cursive;
     font-size: 1rem;
-    &::placeholder {
-      color: $text-color;
-      opacity: 0.3;
+    width: 100%;
+    color: hsla(260, 2%, 25%, 0.7);
+    &:focus {
+      outline: none;
+      border-bottom: solid 3px $bg-color-end;
     }
   }
   &.edit {
     input {
-      padding: 0.5rem 0;
+      height: calc($line-height - 3px);
     }
     .form-control-placeholder {
       display: none;

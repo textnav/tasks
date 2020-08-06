@@ -1,10 +1,7 @@
-$font-size-global: 100%;
-$font-size: 16px;
-$font-scale: 1;
-$line-height: 1.6875;
-
-$font-family: sans-serif;
-
+html {
+  font-size: $font-size;
+  line-height: $line-height;
+}
 html,
 body,
 div,
@@ -87,25 +84,12 @@ img {
   display: block;
 }
 
-html {
-  font-size: $font-size-global;
-  -webkit-text-size-adjust: $font-size-global;
-  -ms-text-size-adjust: $font-size-global;
-}
-
 body {
-  font-family: $font-family;
   font-weight: normal;
-  line-height: $line-height;
   -webkit-font-smoothing: antialiased;
   -webkit-touch-callout: none;
   -webkit-text-size-adjust: none;
   -webkit-user-select: text;
-}
-@for $i from 1 through 6 {
-  h#{$i} {
-    font-size: $font-size + $font-scale * (6 - $i);
-  }
 }
 
 h1,
@@ -122,13 +106,6 @@ span,
 strong,
 label,
 a,
-li,
-ol,
-th,
-td {
-  font-size: $font-size;
-  line-height: $font-size * 1.5;
-}
 p {
   strong {
     font-size: inherit;
@@ -139,15 +116,6 @@ p {
 span,
 label,
 strong,
-li,
-ol,
-th,
-td {
-  color: inherit;
-}
-small {
-  font-size: $font-size * 0.8;
-}
 a {
   text-decoration: none;
   outline: 0;
@@ -179,7 +147,6 @@ textarea {
 
 input {
   vertical-align: middle;
-  font-family: $font-family;
   &[type='search'] {
     &::-ms-clear,
     &::-webkit-search-cancel-button {
@@ -212,7 +179,6 @@ input[type='submit'] {
   border: 0;
   vertical-align: middle;
   -webkit-appearance: button;
-  font-family: $font-family;
   &:disabled {
     cursor: not-allowed;
     opacity: 0.5;

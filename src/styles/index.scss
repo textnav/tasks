@@ -1,9 +1,18 @@
 @import './variables';
 @import './reset';
 @import './keyframes';
+@import './new';
+
+@import url('https://fonts.googleapis.com/css?family=Gochi+Hand');
 
 body {
-  color: $text-color;
+  min-height: 70vh;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: hsl(198, 1%, 29%);
+  font-family: 'Gochi Hand', cursive;
   background-color: $bg-color-start;
   background-image: linear-gradient($bg-color-start 0%, $bg-color-end 100%);
   background-repeat: no-repeat;
@@ -12,15 +21,29 @@ body {
   min-height: 100vh;
   position: relative;
 }
+@media only screen and (min-width: 500px) {
+  body {
+    min-height: 100vh;
+  }
+}
 
 .tag {
-  font-weight: bold;
+  font-weight: normal;
   font-style: italic;
-  font-family: cursive;
+  font-size: 0.8rem;
 }
 .flex {
   display: flex;
 }
 .flex-wrap {
   flex-wrap: wrap;
+}
+.flex-grow {
+  flex-grow: 1;
+}
+.flex-1 {
+  flex: 1;
+}
+.p-0 {
+  padding: 0 !important;
 }

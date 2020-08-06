@@ -12,12 +12,10 @@
   border-radius: 50%;
   width: 1.4rem;
   height: 1.4rem;
+  padding: 0;
   position: absolute;
-  background: $bg-color-end;
   border-width: 1px;
   border-style: solid;
-  border-color: lighten($text-color, 80%);
-  color: $text-color;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -29,26 +27,8 @@
   text-align: center;
 }
 .button {
-  padding: 0.2rem 1rem;
-  border: 1px solid lighten($text-color, 80%);
-  position: relative;
-  border-radius: 4px;
-  margin: 0.5rem;
-  cursor: pointer;
-  user-select: none;
-  transition: transform ease-in 0.1s, box-shadow ease-in 0.25s;
-  box-shadow: 0 2px 25px opacify($bg-color-end, 0.5);
-  &:hover {
-    transform: scale(1.03);
-    background: rgba(0, 0, 0, 0.1);
-    box-shadow: 0 2px 20px rgba(0, 0, 0, 0.15);
-  }
-
-  &:active {
-    transform: scale(0.96);
-
-    .badge {
-      transform: scale(1.2);
-    }
+  margin: 0 10px;
+  span.content {
+    padding: 0.25rem 1rem;
   }
 }

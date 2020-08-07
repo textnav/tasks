@@ -24,7 +24,6 @@ export class BadgeListComponent implements OnInit, OnDestroy {
   }
   toggle(tag: Tag) {
     const isVisible = !tag.isVisible
-    console.log(tag)
     this.toggleTag.emit({ ...tag, isVisible })
   }
 }

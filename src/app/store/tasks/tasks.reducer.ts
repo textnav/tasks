@@ -1,13 +1,15 @@
-import { addTask, addTaskSuccess, initTaskSuccess, addTags, deleteTask, toggleTask } from './tasks.action'
+import { addTaskSuccess, initTaskSuccess, deleteTask, toggleTask, updateTag } from './tasks.action'
 import { createReducer, on, Action } from '@ngrx/store'
-import { Task } from 'src/app/modals/task'
+import { Task, Tag } from 'src/app/modals/task'
 
 export interface TasksState {
   tasks: Task[]
+  tags: Tag[]
 }
 
 export const initialState: TasksState = {
-  tasks: []
+  tasks: [],
+  tags: []
 }
 
 export const reducer = createReducer(
@@ -32,12 +34,17 @@ export const reducer = createReducer(
     const tasks = state.tasks.map(item => (item.id === task.id ? { ...item, done: !item.done } : item))
     return { ...state, tasks }
   }),
-  on(initTaskSuccess, (state, { tasks }) => {
-    return { ...state, tasks }
+  on(updateTag, (state, newTag) => {
+    const tags = state.tags.map(tag => (tag.id === newTag.id ? newTag : tag))
+    return { ...state, tags }
+  }),
+  on(initTaskSuccess, (state, { tasks, tags }) => {
+    return { ...state, tasks, tags }
   })
 )
 
 export const getTasksState = (state: TasksState) => state.tasks
+export const getTagsState = (state: TasksState) => state.tags
 
 export function tasksReducer(state: TasksState | undefined, action: Action) {
   return reducer(state, action)

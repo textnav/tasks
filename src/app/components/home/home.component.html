@@ -5,9 +5,9 @@
   </div>
   <app-add-task></app-add-task>
   <ul *ngIf="allTasks$ | async as tasks">
-    <li *ngFor="let item of tasks; trackBy: trackByFn">
+    <li *ngFor="let item of tasks; trackBy: trackByFn" [class.strike]="item.done" [hidden]="isHidden(item)">
       <app-task-item [task]="item" (toggleTask)="toggleTask(item)" (deleteTask)="deleteTask(item.id)"></app-task-item>
     </li>
   </ul>
 </main>
-<app-badge-list></app-badge-list>
+<app-badge-list (toggleTag)="toggleTag($event)"></app-badge-list>

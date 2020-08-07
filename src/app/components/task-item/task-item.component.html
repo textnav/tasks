@@ -1,41 +1,10 @@
-<!-- <div class="task-item" [class.done]="task.done && !isEditing">
-  <div class="actions">
-    <button aria-label="toggle task" class="icon p-0" (click)="toggle()">
-      <img src="/assets/images/{{ task.done ? 'tick' : 'circle' }}.svg" />
-    </button>
-  </div>
-  <div class="label" *ngIf="!isEditing" [class.strike]="task.done">
-    <div class="text" [class.checked]="task.done" [innerHTML]="task.text | tagHighlight"></div>
-    <div class="flex flex-wrap flex-grow">
-      <div class="time flex-1" *ngIf="task.dueDate">
-        <span *ngIf="!task.done">{{ task.dueDate | timeTo }} (</span>
-        <time>{{ task.dueDate | date: 'medium' }}</time>
-        <span *ngIf="!task.done">) </span>
-      </div>
-      <div class="flex actions">
-        <button aria-label="edit task" class="icon" (click)="edit()"><img src="/assets/images/edit.svg" /></button>
-        <button aria-label="delete task" class="icon" (click)="delete()"><img src="/assets/images/delete.svg" /></button>
-      </div>
-    </div>
-  </div>
-  <div class="label" *ngIf="isEditing">
-    <div class="text">
-      <app-add-task [item]="task" (savedTask)="save()"></app-add-task>
-    </div>
-    <div class="flex actions">
-      <button aria-label="cancel save" class="icon" (click)="cancel()"><img src="/assets/images/close.svg" /></button>
-    </div>
-  </div>
-  <span class="task-msg">Well done!</span>
-</div> -->
-
 <div class="task-item" [class.done]="task.done && !isEditing">
   <div class="actions">
     <button aria-label="toggle task" class="icon p-0" (click)="toggle()">
       <img src="/assets/images/{{ task.done ? 'tick' : 'circle' }}.svg" />
     </button>
   </div>
-  <div class="label" [class.strike]="task.done">
+  <div class="label">
     <div class="text" *ngIf="isEditing">
       <app-add-task [item]="task" (savedTask)="save()"></app-add-task>
     </div>

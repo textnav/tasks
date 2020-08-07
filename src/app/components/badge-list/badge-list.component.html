@@ -1,6 +1,7 @@
 <div class="badges">
-  <button *ngFor="let tag of activeTags | keyvalue" class="button tag">
-    <span class="content">{{ tag.key }}</span>
-    <span class="badge">{{ tag.value }}</span>
+  <button (click)="toggle(tag)" *ngFor="let tag of tags$ | async" class="button tag" [class.hidden]="!tag.isVisible">
+    <span class="content"
+      >{{ tag.id }}<i class="badge">{{ tag.count }}</i></span
+    >
   </button>
 </div>

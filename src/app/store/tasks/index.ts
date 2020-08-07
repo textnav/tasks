@@ -30,3 +30,4 @@ export const selectCompletedTags = createSelector(selectCompletedTasks, tasks =>
 export const selectActiveTags = createSelector(selectActiveTasks, tasks =>
   tasks.map(task => task.tags).reduce((acc, val) => acc.concat(val), [])
 )
+export const getTags = createSelector(selectTasksState, state => state.tags)

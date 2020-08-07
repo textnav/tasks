@@ -27,7 +27,8 @@
 .task-item {
   width: 100%;
   display: grid;
-  grid-template-columns: $line-height auto auto;
+  grid-template-columns: $line-height auto $line-height * 2 + 40px;
+  grid-column-gap: 10px;
   align-items: center;
   position: relative;
   overflow: hidden;
@@ -134,7 +135,7 @@
   }
 }
 .label {
-  margin-left: 0.5rem;
+  margin-right: 0.5rem;
   padding-left: 5px;
   .time {
     animation: appear 1s normal forwards;
@@ -153,7 +154,6 @@
   font-size: 1rem;
   vertical-align: top;
   word-break: break-word;
-  white-space: nowrap;
 }
 .task-msg {
   transform: translate3d(200px, -50%, 0);
@@ -215,7 +215,4 @@ button.icon {
     height: $line-height;
     width: auto;
   }
-}
-.strike {
-  text-decoration: line-through;
 }

@@ -5,3 +5,9 @@ export class Task {
   done: boolean
   dueDate?: Date
 }
+
+export class Tag {
+  id: string
+  isVisible: boolean
+  count: number
+}

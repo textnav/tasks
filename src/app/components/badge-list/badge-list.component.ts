@@ -1,58 +1,30 @@
-import { Component, OnInit, OnDestroy, ChangeDetectionStrategy, ChangeDetectorRef } from '@angular/core'
+import { Component, OnInit, OnDestroy, Output, EventEmitter } from '@angular/core'
 import { Store } from '@ngrx/store'
 import { ConfigState } from 'src/app/store/config'
-import { selectActiveTags, selectCompletedTags } from 'src/app/store/tasks'
-import { takeWhile } from 'rxjs/operators'
+import { getTags } from 'src/app/store/tasks'
+import { Tag } from 'src/app/modals/task'
+import { Observable } from 'rxjs'
 
 @Component({
   selector: 'app-badge-list',
   templateUrl: './badge-list.component.html',
-  styleUrls: ['./badge-list.component.scss'],
-  changeDetection: ChangeDetectionStrategy.OnPush
+  styleUrls: ['./badge-list.component.scss']
 })
 export class BadgeListComponent implements OnInit, OnDestroy {
-  completedTags: Map<string, number>
-  activeTags: Map<string, number>
+  @Output() toggleTag = new EventEmitter<{ id: string; isVisible: boolean }>()
+  tags$: Observable<Tag[]>
   isComponentActive = true
-  constructor(private store: Store<ConfigState>, private changeDetector: ChangeDetectorRef) {
-    this.completedTags = new Map()
-    this.activeTags = new Map()
-  }
+  constructor(private store: Store<ConfigState>) {}
 
   ngOnInit() {
-    this.store
-      .select(selectCompletedTags)
-      .pipe(takeWhile(() => this.isComponentActive))
-      .subscribe(tags => this.setTags('completed', tags))
-
-    this.store
-      .select(selectActiveTags)
-      .pipe(takeWhile(() => this.isComponentActive))
-      .subscribe(tags => this.setTags('active', tags))
+    this.tags$ = this.store.select(getTags)
   }
   ngOnDestroy() {
     this.isComponentActive = false
   }
-  private setTags(type: string, tags: string[]) {
-    if (type === 'completed') {
-      this.completedTags.clear()
-      tags.forEach(tag => {
-        if (this.completedTags.has(tag)) {
-          this.completedTags.set(tag, this.completedTags.get(tag) + 1)
-        } else if (tag) {
-          this.completedTags.set(tag, 1)
-        }
-      })
-    } else if (type === 'active') {
-      this.activeTags.clear()
-      tags.forEach(tag => {
-        if (this.activeTags.has(tag)) {
-          this.activeTags.set(tag, this.activeTags.get(tag) + 1)
-        } else if (tag) {
-          this.activeTags.set(tag, 1)
-        }
-      })
-    }
-    this.changeDetector.detectChanges()
+  toggle(tag: Tag) {
+    const isVisible = !tag.isVisible
+    console.log(tag)
+    this.toggleTag.emit({ ...tag, isVisible })
   }
 }

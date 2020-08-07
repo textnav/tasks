@@ -2,11 +2,11 @@ import { Injectable } from '@angular/core'
 import { Actions, createEffect, ofType } from '@ngrx/effects'
 import { UUID } from 'angular2-uuid'
 
-import { addTask, addTaskSuccess, initTask, initTaskSuccess, addTags, deleteTask, toggleTask } from './tasks.action'
+import { addTask, addTaskSuccess, initTask, initTaskSuccess, addTags, deleteTask, toggleTask, updateTag } from './tasks.action'
 import { map, catchError, mergeMap, withLatestFrom, switchMap } from 'rxjs/operators'
 import { TagsService } from 'src/app/services/tags.service'
 import { TaskService } from 'src/app/services/task.service'
-import { Task } from 'src/app/modals/task'
+import { Task, Tag } from 'src/app/modals/task'
 import { of } from 'rxjs'
 import { selectActiveTasks, selectCompletedTasks, TasksState } from '.'
 import { Store, select } from '@ngrx/store'
@@ -72,29 +72,28 @@ export class TasksEffects {
     { dispatch: false }
   )
 
+  toggleTag$ = createEffect(
+    () =>
+      this.actions$.pipe(
+        ofType(updateTag),
+        map(tag => this.taskService.setTagVisibility(tag))
+      ),
+    { dispatch: false }
+  )
+
   initTasks$ = createEffect(() =>
     this.actions$.pipe(
       ofType(initTask),
       mergeMap(() =>
-        this.taskService.getAllTodosFromDB().pipe(
-          map(tasks => initTaskSuccess({ tasks })),
-          catchError(err => of(initTaskSuccess({ tasks: null })))
+        this.taskService.getAllDataFromDB().pipe(
+          map(data => {
+            const tasks: Task[] = (data[0] || []) as Task[]
+            const tags: Tag[] = (data[1] || []) as Tag[]
+            return initTaskSuccess({ tasks, tags })
+          }),
+          catchError(err => of(initTaskSuccess({ tasks: [], tags: [] })))
         )
       )
-    )
-  )
-
-  initTaskSuccess$ = createEffect(() =>
-    this.actions$.pipe(
-      ofType(initTaskSuccess),
-      map(({ tasks }) => {
-        let tags = []
-        tasks.forEach(task => {
-          const tag = this.tagService.getTags(task.text)
-          tags = tag ? [...tags, ...tag] : tags
-        })
-        return addTags(tags)
-      })
     )
   )
 }

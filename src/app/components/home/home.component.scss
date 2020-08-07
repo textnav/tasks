@@ -1,5 +1,5 @@
 .container {
-  width: calc(100vw - 40px);
+  max-width: calc(100vw - 40px);
   height: auto;
   min-height: 500px;
   min-width: 250px;
@@ -27,6 +27,9 @@
     li {
       padding: 0.5rem 0;
       position: relative;
+      &.strike {
+        text-decoration: line-through;
+      }
     }
   }
 }

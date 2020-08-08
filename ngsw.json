@@ -1,6 +1,6 @@
 {
   "configVersion": 1,
-  "timestamp": 1596815912713,
+  "timestamp": 1596870466733,
   "index": "/tasks/index.html",
   "assetGroups": [
     {
@@ -10,14 +10,14 @@
       "urls": [
         "/tasks/favicon.ico",
         "/tasks/index.html",
-        "/tasks/main-es2015.10277f050098dd8cee92.js",
-        "/tasks/main-es5.10277f050098dd8cee92.js",
+        "/tasks/main-es2015.58e2c93766a169289d04.js",
+        "/tasks/main-es5.58e2c93766a169289d04.js",
         "/tasks/manifest.webmanifest",
         "/tasks/polyfills-es2015.2987770fde9daa1d8a2e.js",
         "/tasks/polyfills-es5.6696c533341b95a3d617.js",
         "/tasks/runtime-es2015.edb2fcf2778e7bf1d426.js",
         "/tasks/runtime-es5.edb2fcf2778e7bf1d426.js",
-        "/tasks/styles.d4a64e6f50a2df2b5c34.css"
+        "/tasks/styles.adf3e5ab25abcb69a362.css"
       ],
       "patterns": []
     },
@@ -43,12 +43,12 @@
         "/tasks/assets/icons/icon-96x96.png",
         "/tasks/assets/icons/mstile-150x150.png",
         "/tasks/assets/icons/safari-pinned-tab.svg",
-        "/tasks/assets/images/border.gif",
         "/tasks/assets/images/circle.svg",
         "/tasks/assets/images/close.svg",
         "/tasks/assets/images/delete.svg",
         "/tasks/assets/images/edit.svg",
         "/tasks/assets/images/laptop.svg",
+        "/tasks/assets/images/scribble.svg",
         "/tasks/assets/images/tick copy.svg",
         "/tasks/assets/images/tick.svg"
       ],
@@ -74,24 +74,24 @@
     "/tasks/assets/icons/icon-96x96.png": "e6a8ad657c72e7880a6948669e80fb7a215636f7",
     "/tasks/assets/icons/mstile-150x150.png": "ecc6dcf362728ec80eb0d2b79924d1d735a2c5ee",
     "/tasks/assets/icons/safari-pinned-tab.svg": "96d46d963f7004b851e1e6914e1129f1602c6785",
-    "/tasks/assets/images/border.gif": "be96d1f29890edafaf63a4d370a2712e2aa1c837",
     "/tasks/assets/images/circle.svg": "874ccbd05584ddf21c78ec1ef9be269c7b4b7e6a",
     "/tasks/assets/images/close.svg": "b915ec0576642e32cffcefc1244cd2edddd8fddb",
     "/tasks/assets/images/delete.svg": "c7078d5aea4c02200a933418f92431e334064a1f",
     "/tasks/assets/images/edit.svg": "38c7bca4bb70c602bddb47dc3b64980ec61c27f2",
     "/tasks/assets/images/laptop.svg": "5fd85095ad1bdc9614822f9428cc31bec4e58dbb",
+    "/tasks/assets/images/scribble.svg": "7f6563ac7cd3da01b05a2c87626cf95a0df54032",
     "/tasks/assets/images/tick copy.svg": "7c9abeb6adf3e53ad451c43f37fdaf00aba3a875",
     "/tasks/assets/images/tick.svg": "da2a36a32ad267c925851b46ed9d45a59d603efc",
     "/tasks/favicon.ico": "f91507db77aea23b2e10b625d2b5fe955159ece9",
-    "/tasks/index.html": "a6b41284573d08915227dd9d64f4835730989ac2",
-    "/tasks/main-es2015.10277f050098dd8cee92.js": "5f15c6c269d60ccdf100d22d6b50f0f220815e16",
-    "/tasks/main-es5.10277f050098dd8cee92.js": "1ea75e87356609d3dd58e6ff0366d11bfb475fca",
+    "/tasks/index.html": "437b465c6f7a472bdae80016c332ab6ed23f721c",
+    "/tasks/main-es2015.58e2c93766a169289d04.js": "7a83b7d78a4501e9358016db28dd7ae3fb17528d",
+    "/tasks/main-es5.58e2c93766a169289d04.js": "fd829914ebb0fc783a25a791a4b723889eff27e2",
     "/tasks/manifest.webmanifest": "f63db12a329faa9607c5ed00f39ae5e2f8e00b5f",
     "/tasks/polyfills-es2015.2987770fde9daa1d8a2e.js": "cf5cbfa9134716054fb479ab21362146cdf1f2ff",
     "/tasks/polyfills-es5.6696c533341b95a3d617.js": "6bff0c03e05bb347d213ad1b3674045eb892d189",
     "/tasks/runtime-es2015.edb2fcf2778e7bf1d426.js": "a9aafcf49f49145093fc831efd9b8e2f6c71bb9c",
     "/tasks/runtime-es5.edb2fcf2778e7bf1d426.js": "a9aafcf49f49145093fc831efd9b8e2f6c71bb9c",
-    "/tasks/styles.d4a64e6f50a2df2b5c34.css": "d682fcf2b95098a432a3399a8e39fb7d68a69418"
+    "/tasks/styles.adf3e5ab25abcb69a362.css": "d259512d0888412a5204be8b7ad684c0c5aac198"
   },
   "navigationUrls": [
     {

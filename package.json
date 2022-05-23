@@ -31,7 +31,7 @@
     "angular-cli-ghpages": "^0.6.1",
     "angular2-uuid": "^1.1.1",
     "chrono-node": "^2.2.4",
-    "dexie": "^2.0.4",
+    "dexie": "^3.2.2",
     "jasmine-marbles": "^0.6.0",
     "rxjs": "~6.4.0",
     "tslib": "^1.10.0",

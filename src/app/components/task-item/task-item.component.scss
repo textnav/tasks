@@ -27,7 +27,7 @@
 .task-item {
   width: 100%;
   display: grid;
-  grid-template-columns: $line-height auto $line-height * 2 + 40px;
+  grid-template-columns: $line-height 1fr auto;
   grid-column-gap: 10px;
   align-items: center;
   position: relative;

@@ -5,27 +5,43 @@
 
 @import url('https://fonts.googleapis.com/css?family=Gochi+Hand');
 
+:root {
+  --font-size: 30px;
+  --line-height: calc(var(--font-size) + 2px);
+  --page-margin-start: 62px;
+  --page-margin-end: calc(var(--page-margin-start) + 1px);
+}
+
 body {
-  min-height: 70vh;
   box-sizing: border-box;
   display: flex;
   justify-content: center;
   align-items: center;
-  color: hsl(198, 1%, 29%);
   font-family: 'Gochi Hand', cursive;
-  background-color: $bg-color-start;
-  background-image: linear-gradient($bg-color-start 0%, $bg-color-end 100%);
-  background-repeat: no-repeat;
-  background-size: cover;
   margin: 0;
-  min-height: 100vh;
   position: relative;
+
+  background-color: #fff;
+  background-image: linear-gradient(
+      90deg,
+      transparent var(--page-margin-start),
+      #abced4 var(--page-margin-start),
+      #abced4 var(--page-margin-end),
+      transparent var(--page-margin-end)
+    ),
+    linear-gradient(#eee 0.1rem, transparent 0.1rem);
+  background-size: 100% 1.1rem;
+  background-position-x: 0.7rem;
 }
-@media only screen and (min-width: 500px) {
-  body {
-    min-height: 100vh;
-  }
-}
+
+// @media screen and (prefers-color-scheme: dark) {
+//   body {
+//   background-color: #fff;
+//   background-image:
+//   linear-gradient(90deg, transparent 79px, #abced4 79px, #abced4 81px, transparent 81px),
+//   linear-gradient(#eee .1em, transparent .1em);
+//   }
+// }
 
 .tag {
   font-weight: normal;
@@ -46,4 +62,10 @@ body {
 }
 .p-0 {
   padding: 0 !important;
+}
+
+@media (prefers-color-scheme: dark) {
+  body {
+    background-color: $bg-dark;
+  }
 }

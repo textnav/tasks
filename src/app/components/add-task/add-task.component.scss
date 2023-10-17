@@ -1,17 +1,20 @@
 @import '../../../styles/variables';
 
 form {
+  font-size: 0;
   .form__label {
     display: block;
-    margin-bottom: 0.5rem;
-    font-size: 0.8rem;
+    margin-bottom: var(--line-height);
+    font-size: calc(var(--font-size) - 3px);
+    line-height: calc(var(--line-height) - 3px);
   }
   .form__input {
     box-sizing: border-box;
     background-color: transparent;
     border-bottom: dashed 3px $bg-color-end;
     font-family: 'Gochi Hand', cursive;
-    font-size: 1rem;
+    font-size: var(--font-size);
+    line-height: var(--line-height);
     width: 100%;
     color: hsla(260, 2%, 25%, 0.7);
     &:focus {

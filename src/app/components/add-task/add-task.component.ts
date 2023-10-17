@@ -1,5 +1,5 @@
 import { Component, OnInit, ChangeDetectionStrategy, Input, Output, EventEmitter } from '@angular/core'
-import { FormGroup, FormControl, Validators } from '@angular/forms'
+import { UntypedFormGroup, UntypedFormControl, Validators } from '@angular/forms'
 import { Store } from '@ngrx/store'
 import { TasksState } from 'src/app/store/tasks'
 import { addTask } from 'src/app/store/tasks/tasks.action'
@@ -15,8 +15,8 @@ export class AddTaskComponent implements OnInit {
   @Input() item: Task
   @Output() savedTask = new EventEmitter<boolean>()
 
-  addTaskForm = new FormGroup({
-    task: new FormControl('', Validators.required)
+  addTaskForm = new UntypedFormGroup({
+    task: new UntypedFormControl('', Validators.required)
   })
 
   constructor(private store: Store<TasksState>) {}
@@ -28,7 +28,7 @@ export class AddTaskComponent implements OnInit {
   }
 
   get task() {
-    return this.addTaskForm.get('task') as FormControl
+    return this.addTaskForm.get('task') as UntypedFormControl
   }
 
   onSubmit() {

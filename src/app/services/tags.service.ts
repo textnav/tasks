@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core'
-import chrono from 'chrono-node'
+import * as chrono from 'chrono-node'
 
 @Injectable({
   providedIn: 'root'

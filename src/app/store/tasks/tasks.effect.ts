@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core'
 import { Actions, createEffect, ofType } from '@ngrx/effects'
-import { UUID } from 'angular2-uuid'
+import { v4 as uuidv4 } from 'uuid'
 
 import { addTask, addTaskSuccess, initTask, initTaskSuccess, addTags, deleteTask, toggleTask, updateTag } from './tasks.action'
 import { map, catchError, mergeMap, withLatestFrom, switchMap } from 'rxjs/operators'
@@ -9,7 +9,7 @@ import { TaskService } from 'src/app/services/task.service'
 import { Task, Tag } from 'src/app/modals/task'
 import { of } from 'rxjs'
 import { selectActiveTasks, selectCompletedTasks, TasksState } from '.'
-import { Store, select } from '@ngrx/store'
+import { Store } from '@ngrx/store'
 
 @Injectable()
 export class TasksEffects {
@@ -39,7 +39,7 @@ export class TasksEffects {
       mergeMap(res => {
         const text = res.text
         const tags = this.tagService.getTags(text)
-        const id = res.id ? res.id : UUID.UUID()
+        const id = res.id ? res.id : uuidv4()
         const dueDate = this.tagService.getDate(text)
         const task: Task = { text, tags, id, dueDate, done: res.done }
 

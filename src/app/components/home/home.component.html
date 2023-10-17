@@ -1,9 +1,11 @@
 <main class="container">
-  <div class="heading">
-    <img class="heading__img" src="/assets/images/laptop.svg" />
-    <h1 class="heading__title">To-Do List</h1>
-  </div>
-  <app-add-task></app-add-task>
+  <section class="hero">
+    <div class="heading">
+      <img class="heading__img" src="/assets/images/laptop.svg" />
+      <h1 class="heading__title">To-Do List</h1>
+    </div>
+    <app-add-task></app-add-task>
+  </section>
   <ul *ngIf="allTasks$ | async as tasks">
     <li *ngFor="let item of tasks; trackBy: trackByFn" [class.strike]="item.done" [hidden]="isHidden(item)">
       <app-task-item [task]="item" (toggleTask)="toggleTask(item)" (deleteTask)="deleteTask(item.id)"></app-task-item>

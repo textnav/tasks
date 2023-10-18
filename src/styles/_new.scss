@@ -4,21 +4,19 @@
   justify-content: center;
   margin-bottom: 1rem;
 }
-.heading__title {
+h1.heading__title {
   transform: rotate(2deg);
   padding: 0.2rem 1.2rem;
   border-radius: 20% 5% 20% 5%/5% 20% 25% 20%;
   background-color: $bg-color-end;
-  color: white;
-  font-size: 1.5rem;
-}
-@media only screen and (min-width: 500px) {
-  .heading__title {
-    font-size: 2rem;
-  }
 }
 .heading__img {
   height: 100px;
+}
+@media only screen and (max-width: 600px) {
+  .heading__img {
+    display: none;
+  }
 }
 
 .button {
@@ -36,7 +34,8 @@
   background-color: $bg-color-start;
 }
 .button span {
-  background: #f1f5f8;
+  background: var(--tag-color);
+  color: var(--text-color);
   display: block;
   padding: 0.5rem 1rem;
   border-radius: 5px;

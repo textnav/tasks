@@ -2,16 +2,5 @@ $text-color: #000;
 $bg-color-start: #fc6c48;
 $bg-color-end: #ef5081;
 
-$bg-light: #232e37;
-$dots-light: #f7d6f2;
-
-$bg-dark: #232e37;
-$dots-dark: #f7d6f2;
-
-@media screen and (prefers-color-scheme: light) {
-  $bg-light: #f1f5f8;
-  $dots-light: #c1bfc1;
-}
-
 $line-height: 32px;
 $font-size: 25px;

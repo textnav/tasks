@@ -17,9 +17,19 @@ import { TasksEffects } from './store/tasks/tasks.effect'
 import { TimeToPipe } from './pipes/time-to.pipe'
 import { TagHighlightPipe } from './pipes/tag-highlight.pipe'
 import { BadgeListComponent } from './components/badge-list/badge-list.component'
+import { CircleTickComponent } from './components/circle-tick/circle-tick.component'
 
 @NgModule({
-  declarations: [AppComponent, HomeComponent, TaskItemComponent, AddTaskComponent, TimeToPipe, TagHighlightPipe, BadgeListComponent],
+  declarations: [
+    AppComponent,
+    HomeComponent,
+    TaskItemComponent,
+    CircleTickComponent,
+    AddTaskComponent,
+    TimeToPipe,
+    TagHighlightPipe,
+    BadgeListComponent
+  ],
   imports: [
     BrowserModule,
     ReactiveFormsModule,

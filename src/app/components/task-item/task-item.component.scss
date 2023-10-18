@@ -27,9 +27,9 @@
 .task-item {
   width: 100%;
   display: grid;
-  grid-template-columns: $line-height 1fr auto;
-  grid-column-gap: 10px;
-  align-items: center;
+  grid-template-columns: $line-height 1fr;
+  grid-column-gap: var(--font-size);
+  align-items: stretch;
   position: relative;
   overflow: hidden;
   .label {
@@ -140,6 +140,8 @@
   .time {
     animation: appear 1s normal forwards;
     margin-right: 20px;
+    display: flex;
+    flex-wrap: wrap;
     span {
       @extend %extend_2;
     }
@@ -154,6 +156,23 @@
   font-size: 1rem;
   vertical-align: top;
   word-break: break-word;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  align-items: baseline;
+
+  &.checked::before {
+    content: '';
+    background-image: url(/assets/images/scribble-light.svg);
+    background-size: auto var(--line-height);
+    background-repeat: repeat;
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    opacity: 0.7;
+    transition: width 3s ease-in-out;
+  }
 }
 .task-msg {
   transform: translate3d(200px, -50%, 0);
@@ -214,5 +233,11 @@ button.icon {
   img {
     height: $line-height;
     width: auto;
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  .text.checked::before {
+    background-image: url(/assets/images/scribble-dark.svg);
   }
 }

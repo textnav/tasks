@@ -8,8 +8,21 @@
 :root {
   --font-size: 30px;
   --line-height: calc(var(--font-size) + 2px);
-  --page-margin-start: 62px;
+  --page-margin-start: 80px;
   --page-margin-end: calc(var(--page-margin-start) + 1px);
+  --bg-color: #eee;
+  --tag-color: #efefef;
+  --text-color: #111;
+  --line-color: #aaa;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --text-color: #eee;
+    --bg-color: #111;
+    --tag-color: #333;
+    --line-color: #222;
+  }
 }
 
 body {
@@ -20,33 +33,27 @@ body {
   font-family: 'Gochi Hand', cursive;
   margin: 0;
   position: relative;
+  color: var(--text-color);
 
-  background-color: #fff;
+  background-color: var(--bg-color);
   background-image: linear-gradient(
       90deg,
       transparent var(--page-margin-start),
-      #abced4 var(--page-margin-start),
-      #abced4 var(--page-margin-end),
+      var(--line-color) var(--page-margin-start),
+      var(--line-color) var(--page-margin-end),
       transparent var(--page-margin-end)
     ),
-    linear-gradient(#eee 0.1rem, transparent 0.1rem);
-  background-size: 100% 1.1rem;
-  background-position-x: 0.7rem;
+    linear-gradient(var(--line-color) 0px, transparent 1px);
+  background-size: 100% var(--line-height);
+  background-position-y: 14px;
 }
-
-// @media screen and (prefers-color-scheme: dark) {
-//   body {
-//   background-color: #fff;
-//   background-image:
-//   linear-gradient(90deg, transparent 79px, #abced4 79px, #abced4 81px, transparent 81px),
-//   linear-gradient(#eee .1em, transparent .1em);
-//   }
-// }
 
 .tag {
   font-weight: normal;
   font-style: italic;
-  font-size: 0.8rem;
+  font-size: calc(var(--font-size) * 0.8);
+  line-height: var(--line-height);
+  padding: 0 5px 0;
 }
 .flex {
   display: flex;
@@ -62,10 +69,4 @@ body {
 }
 .p-0 {
   padding: 0 !important;
-}
-
-@media (prefers-color-scheme: dark) {
-  body {
-    background-color: $bg-dark;
-  }
 }

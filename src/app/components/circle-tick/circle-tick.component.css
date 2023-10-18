@@ -1,0 +1,6 @@
+svg {
+  fill: var(--text-color);
+  &.dim {
+    fill: var(--line-color);
+  }
+}

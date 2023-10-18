@@ -1,36 +1,44 @@
 @import '../../../styles/variables';
 
+:host {
+  width: 100%;
+}
 form {
-  font-size: 0;
-  .form__label {
-    display: block;
-    margin-bottom: var(--line-height);
-    font-size: calc(var(--font-size) - 3px);
-    line-height: calc(var(--line-height) - 3px);
-  }
-  .form__input {
-    box-sizing: border-box;
-    background-color: transparent;
-    border-bottom: dashed 3px $bg-color-end;
-    font-family: 'Gochi Hand', cursive;
-    font-size: var(--font-size);
-    line-height: var(--line-height);
-    width: 100%;
-    color: hsla(260, 2%, 25%, 0.7);
-    &:focus {
-      outline: none;
-      border-bottom: solid 3px $bg-color-end;
+  .form-group {
+    display: flex;
+    flex-direction: column;
+
+    .form__label {
+      display: block;
+      margin-bottom: var(--line-height);
+      font-size: calc(var(--font-size) * 0.75);
+      line-height: calc(var(--line-height) - 2px);
+    }
+    .form__input {
+      box-sizing: border-box;
+      background-color: transparent;
+      border-bottom: dashed 2px $bg-color-end;
+      font-family: 'Gochi Hand', cursive;
+      font-size: var(--font-size);
+      line-height: var(--line-height);
+      width: 100%;
+      color: var(--text-color);
+      &:focus {
+        outline: none;
+        border-bottom: solid 3px $bg-color-end;
+      }
     }
   }
   &.edit {
-    input {
-      height: calc($line-height - 3px);
-    }
-    .form-control-placeholder {
-      display: none;
-    }
     .form-group {
       margin: 0;
+      input.form__input {
+        height: calc($line-height - 3px);
+        font-size: calc(var(--font-size) * 0.75);
+      }
+      .form-control-placeholder {
+        display: none;
+      }
     }
   }
 }

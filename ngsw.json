@@ -1,6 +1,6 @@
 {
   "configVersion": 1,
-  "timestamp": 1697728465648,
+  "timestamp": 1697729149196,
   "index": "/tasks/index.html",
   "assetGroups": [
     {
@@ -13,11 +13,11 @@
       "urls": [
         "/tasks/favicon.ico",
         "/tasks/index.html",
-        "/tasks/main.a616e4b2fa0483a5.js",
+        "/tasks/main.d23204211261728c.js",
         "/tasks/manifest.webmanifest",
         "/tasks/polyfills.deee33c761b76cdf.js",
         "/tasks/runtime.edb327a9c5542b11.js",
-        "/tasks/styles.f0850e4ac4c43975.css"
+        "/tasks/styles.e5a0311874008a61.css"
       ],
       "patterns": []
     },
@@ -82,12 +82,12 @@
     "/tasks/assets/images/scribble-dark.svg": "c89317e59e0d9aae598b23182a535944f65aa138",
     "/tasks/assets/images/scribble-light.svg": "7f6563ac7cd3da01b05a2c87626cf95a0df54032",
     "/tasks/favicon.ico": "f91507db77aea23b2e10b625d2b5fe955159ece9",
-    "/tasks/index.html": "1dfc505f69ee113d1929a8eb2bec143e8735a04d",
-    "/tasks/main.a616e4b2fa0483a5.js": "2f215eb3842ae3253baeadb6bd612025592a8fe5",
+    "/tasks/index.html": "1948efed6c314c5658bf3597f9b626ba32fc9aad",
+    "/tasks/main.d23204211261728c.js": "f5136d559bacf54b16d7f59fd7f435bc531a7eb4",
     "/tasks/manifest.webmanifest": "f63db12a329faa9607c5ed00f39ae5e2f8e00b5f",
     "/tasks/polyfills.deee33c761b76cdf.js": "192c1527b94305c27775b57cf3784c5fccf245d7",
     "/tasks/runtime.edb327a9c5542b11.js": "e17099def9236a115caded72f04e4b6380aaac9c",
-    "/tasks/styles.f0850e4ac4c43975.css": "4e5d3ba9440ed2a4af89c38c1e2d2f48856f6b04"
+    "/tasks/styles.e5a0311874008a61.css": "efa4c9009e0e80fbcd6f19335a52820e72f000ea"
   },
   "navigationUrls": [
     {

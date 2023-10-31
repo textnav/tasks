@@ -35,6 +35,10 @@ export class TaskItemComponent implements OnInit {
     }
   }
 
+  handleAction() {
+    if (this.isEditing) this.delete()
+    else this.toggle()
+  }
   toggle() {
     this.tickIndex = this.randomValue
     this.toggleTask.emit()

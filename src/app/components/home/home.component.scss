@@ -23,7 +23,7 @@
     padding-top: calc(var(--line-height) * 1.5);
     padding-right: calc(var(--line-height) / 2);
     padding-bottom: 0;
-    padding-left: calc(var(--line-height) + var(--line-height) + var(--font-size));
+    padding-left: calc(var(--page-margin-start) + var(--font-size) - calc(var(--line-height) * 0.5));
   }
 
   ul {
@@ -32,7 +32,7 @@
     padding-top: calc(var(--line-height) * 0.6);
     padding-right: calc(var(--line-height) / 2);
     padding-bottom: 0;
-    padding-left: calc(var(--line-height));
+    padding-left: calc(var(--page-margin-start) - calc(var(--line-height) * 1.5));
     position: relative;
     z-index: 1;
 

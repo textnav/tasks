@@ -1,6 +1,11 @@
 <div class="task-item" [class.done]="task.done && !isEditing">
   <div class="actions">
-    <app-circle-tick [circleIndex]="circleIndex" [tickIndex]="tickIndex" [eraserIndex]="eraserIndex" (click)="toggle()"></app-circle-tick>
+    <app-circle-tick
+      [circleIndex]="circleIndex"
+      [tickIndex]="tickIndex"
+      [eraserIndex]="eraserIndex"
+      (click)="handleAction()"
+    ></app-circle-tick>
   </div>
   <div class="label">
     <div class="text" *ngIf="isEditing">
